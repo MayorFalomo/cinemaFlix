@@ -1,0 +1,25 @@
+.homeContainer{
+    display: grid;
+    grid-template-columns: 300px auto 400px;
+    overflow-x: hidden;
+    height: 98vh;
+}
+
+.SeeMore{
+    cursor: pointer;
+}
+.SeeMore:hover{
+    color: turquoise;
+}
+
+@media(max-width: 1530px){
+    .homeContainer{
+        grid-template-columns: 300px auto 0;
+        position: relative;
+    }
+}
+@media(max-width: 830px){
+    .homeContainer{
+        grid-template-columns: 0 auto;
+    }
+}

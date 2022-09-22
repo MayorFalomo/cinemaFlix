@@ -1,0 +1,109 @@
+.RightgridContainer{
+    padding: 30px 1px;
+    width: auto;
+    border-left: 3px solid turquoise;
+    border-top: 1px solid turquoise;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.RightgridContainer::-webkit-scrollbar {
+  width: 0;
+}
+
+.flexContainer{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap; 
+    gap: 10px;
+    width: 80%;
+}
+.flexComing{
+    width: 100%;
+}
+.comingCard{
+    display: flex;
+    width: 100%;
+}
+
+.comingImg img {
+    width: 100%;
+    max-width: 400px;
+    min-width: 200px;
+    border-radius: 5px;
+}
+.comingImg{
+    width: 100%;
+}
+.comingFlex{
+    width: 100%;
+}
+
+.aboutMovie{
+    width: 100%;
+}
+
+.RightgridContainer button {
+    padding: 6px 20px;
+    border-radius: 10px;
+    background-color: turquoise;
+    color: #000;
+    font-size: 18px;
+    transition: 0.4s ease;
+}
+.RightgridContainer button:hover{
+    background-color: transparent;
+    color: #fff;
+    border: 1px turquoise solid;
+}
+.RightgridContainer h2{
+    display: flex;
+    justify-content: center;
+    margin: 5px 1px;
+}
+.RightgridContainer button{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: none;
+}
+
+.ComingHeader{
+    margin: 30px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+@media(max-width: 1530px){
+    .RightgridContainer{
+        position: absolute; 
+        top: 0;
+        right: -350vw;
+        z-index: 9999999;
+        transition: 0.5s ease;
+        color: #191619;
+                width: 50%;
+                height: 100%;
+    }
+    .gridActive{
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 99999999;
+        transition: 0.6s ease;
+         width: 50%;
+        background-color: #191619; 
+        color: #fff;
+        display:flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        margin: auto;
+                padding: 30px 10px;
+    }
+}

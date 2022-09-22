@@ -1,0 +1,129 @@
+.watchContainer{
+    display: grid;
+    grid-template-columns: 300px auto;
+}
+
+.seenImg img{
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 5px;
+}
+.seenContainer button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+}
+
+.seenContainer{
+    display: flex;
+    margin-left: 10px;
+}
+
+.flex-Seen-List{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+
+.flexWatch{
+    display: inline-flex;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: 100vh;
+    text-align: center;
+    overflow:auto;
+}
+
+.flexingWatch{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 20px;
+    height: 100vh;
+}
+
+.watchlistCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clearBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.clearBtn button{
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+}
+
+.emptyText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.seenContainer button{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.clearBtn{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+@media(max-width: 830px){
+    .watchContainer{
+        display: grid;
+        grid-template-columns: 0 auto;
+    }
+
+    .WatchListNav{
+        position: absolute; 
+        right: -300vw;
+        top: 0;
+        width: 100%; 
+        height: 100%;  
+        overflow: hidden;
+        z-index: 999;
+        transition: 0.5s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        background-color: #fff;
+      }
+
+      .watchListNavActive{
+        position: fixed;
+        z-index: 9999999999999999999999999999 !important;
+        right: 0px;
+        top: 0px;
+        width: 70%;
+        height: 100vh;
+        background-color: #19161F;
+        color: #fff;
+        transition: 0.5s ease;
+        padding: 40px 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: start;  
+      }
+}

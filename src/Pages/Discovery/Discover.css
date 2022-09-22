@@ -1,0 +1,118 @@
+.discoverContainer{
+    display: grid;
+    grid-template-columns: 300px auto;
+     overflow: auto;
+}
+
+.discoverMoreFlex{
+    overflow: auto;
+    height: 100vh; 
+}
+
+.discoverMoreFlex::-webkit-scrollbar {
+  width: 0;
+}
+.discoverPathImg img{
+    width: 100%;
+    max-width: 300px;
+    height:auto;
+    border-radius: 10px;
+}
+.discoverFlex{
+    padding: 10px 10px;
+    display: inline-flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 10px 30px;
+    position: relative;
+}
+.DiscoverCard{
+    width: 300px;
+    height: auto;
+}
+.DiscoverCard p{
+    padding: 5px 1px;
+    font-size: 20px;
+}
+.SeeMoreD{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+}
+
+.testSee{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.testSee button{
+    padding: 10px 25px;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.discoverHeading{
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+    overflow-y: hidden;
+}
+.discoverHeading h1:hover{
+    text-decoration: underline;
+}
+.more{
+    display: none;
+}
+.more.active{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.burgerD{
+    font-size: 40px;
+    display: none;
+}
+
+.hamburgerActiveD{
+    display: none;
+}
+
+.DiscoverMenu{
+    font-size: 35px;
+}
+
+
+@media(max-width: 835px ){
+
+    .discoverContainer{
+        display: grid;
+        grid-template-columns: 0 auto;
+    }
+
+     .burgerD{
+         position: absolute; 
+        right: 30px;
+        top: 10px;
+        overflow: hidden;
+        z-index: 999999999999999999;
+        transition: 0.5s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+    }
+
+    .hamBurgerD{
+        position: fixed;
+        z-index: 99999999999999999;
+        right: 30px;
+        top: 10px;
+        color: #fff;
+        transition: 0.5s ease;
+        display: flex;
+    }
+
+   
+}

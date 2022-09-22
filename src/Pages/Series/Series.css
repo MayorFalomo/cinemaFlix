@@ -1,0 +1,25 @@
+.SeriesContainer{
+    display: grid;
+    grid-template-columns: 300px auto;
+    overflow: auto;
+    max-width: 100%;
+    height: 100vh;
+}
+.SeriesContainer::-webkit-scrollbar {
+  width: 0;
+  overflow: hidden;
+}
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+}
+@media(max-width:870px){
+    .SeriesContainer {
+        display: grid;
+        grid-template-columns: 0 auto;
+    }
+}

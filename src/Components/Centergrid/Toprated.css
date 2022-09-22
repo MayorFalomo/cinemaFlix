@@ -1,0 +1,75 @@
+#ratedImage{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 200px;
+}
+
+#ratedImage img{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    cursor: pointer;
+}
+.watchlistBtns{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+.RatedCard button{
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color:  turquoise;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    color: #000;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+   transition: 0.4s ease;
+    border-radius: 10px;
+}
+.RatedCard button:hover{
+    background-color: transparent;
+    color: #fff;
+    border: 1px turquoise solid;
+}
+
+.RatedCard button{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.watchlistBtns{
+    width: 100%;
+}
+
+.ratedTitle{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.addRated{
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    margin: auto;
+}
+
+.noImagery{
+    width: 200px;
+    height: 300px;
+    border:  2px turquoise solid;
+}
+.noImagery p{
+    margin: 5px 1px;
+}
+.noPosters{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    height: 100%
+}

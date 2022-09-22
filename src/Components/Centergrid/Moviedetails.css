@@ -1,0 +1,74 @@
+.detailsContainer{
+    display: grid;
+    grid-template-columns: 300px auto;
+    height: 100vh;
+}
+
+.detail{
+    display: flex;
+    gap: 50px;
+    position: absolute;
+    top: 70px;
+    left: 0px;
+      display: flex;
+      line-height: 30px;
+}
+
+.detailsCard{
+    position: relative;
+}
+
+.posterDetail img{
+    width: 100%;
+    max-width: 200px;
+    min-width: 250px;
+    height: auto;
+}
+
+.bg-color{
+    background-color: rgba(0, 0, 0, 0.389);
+    height: 100vh;
+}
+.flexDetails{
+    line-height: 30px;
+    font-size: 20px;
+        width: 90%;
+}
+.flexDetails p span{
+background: rgba(255, 255, 255, 0.2);
+border-radius: 4px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+padding: 7px 20px;
+}
+.flexDetails p{
+    margin: 30px 10px;
+}
+
+
+@media(max-width: 1000px) {
+    .detail{
+        display: flex;
+        flex-direction: column;
+    }
+    .posterDetail{
+       display: none;
+    }
+}
+
+@media(max-width:830px){
+    .detailsContainer{
+        display: grid;
+        grid-template-columns: 0 auto;
+    }
+    .flexDetails{
+        width: 100%;
+    }
+}
+@media (max-width: 450px){
+    
+    .flexDetails p:nth-of-type(6){
+    display: none;
+}
+}

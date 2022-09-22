@@ -1,0 +1,123 @@
+.userImg img{
+    width: 70px;
+    border-radius: 40px;
+}
+h1 span{
+    color: red;
+}
+
+nav{
+        height: 100%;
+        border-right: 3px turquoise solid;
+        border-bottom: 2px turquoise solid;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.NavLogoImg img{
+    width: 100%;
+     max-width: 250px;
+     min-width: 200px;
+     height: auto;
+}
+
+.navbarD{
+     display:flex;
+    flex-direction:column; 
+    gap: 30px;
+    margin: 30px 30px;
+}
+.lengthCard{
+    width: 220px;
+    position: relative;
+}
+
+.flexCard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 5px;
+}
+.NavListItem{
+    border-bottom: 2px white solid;
+    padding: 20px 5px;
+    width: 100%;
+}
+
+nav ul{
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+nav ul li{
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    gap: 20px;
+    cursor: pointer;
+}
+
+nav ul li:hover{
+     color: turquoise;
+}
+
+nav h1{
+    font-size: 30px
+}
+nav h4{
+    display: flex;
+    cursor: pointer;
+}
+
+.userImg img{
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+}
+.user{
+    display:flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+@media(max-width: 835px){
+     .navbarD{
+        position: absolute; 
+        right: -600vw;
+        top: 0;
+         width: 100%; 
+         height: 100%;  
+         overflow: hidden;
+        z-index: 999;
+        transition: 0.5s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+    }
+    .burgerD{
+        font-size: 35px;
+    }
+
+    .navD{
+        position: fixed;
+        z-index: 9999999999999999999999999999999 !important;
+        right: 0px;
+        top: 0px;
+        width: 60%;
+        height: 100vh;
+        background-color: #19161F;
+        color: #fff;
+        transition: 0.5s ease;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: start;  
+      }
+}

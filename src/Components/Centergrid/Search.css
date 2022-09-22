@@ -1,0 +1,31 @@
+.searchContainer{
+    overflow: auto;
+    height: 100vh;
+}
+.searchContainer::-webkit-scrollbar {
+  width: 0;
+}
+.searchCard{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px 30px;
+    margin-left: 20px;
+}
+
+.posterImg img{
+    width: 100%;
+    height: auto;
+    max-width: 250px;
+}
+
+.searchContainer h1{
+     margin: 20px 5px;
+}
+
+.searchFlex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+}
