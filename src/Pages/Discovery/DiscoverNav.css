@@ -50,7 +50,6 @@ nav ul{
     font-size: 14px;
     display: flex;
     flex-direction: column;
-    /* gap: 10px; */
     justify-content: center;
 }
 
@@ -130,10 +129,9 @@ nav h4{
 
 @media(max-width: 400px){
    .community{
-        border: 2px red solid;
         display: none;
     }
-    .flexCard p{
+    .MENU{
         display: none;
     }
     .profile{

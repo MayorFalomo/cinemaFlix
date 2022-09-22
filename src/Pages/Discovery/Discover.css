@@ -12,9 +12,16 @@
 .discoverMoreFlex::-webkit-scrollbar {
   width: 0;
 }
+.discoverPathImg{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
 .discoverPathImg img{
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
     height:auto;
     border-radius: 10px;
 }
@@ -32,7 +39,7 @@
 }
 .DiscoverCard p{
     padding: 5px 1px;
-    font-size: 16px;
+    font-size: 18px;
 }
 .SeeMoreD{
     display: flex;

@@ -2,7 +2,6 @@ import React from "react";
 import { BiHomeCircle, BiTime } from "react-icons/bi";
 import { AiOutlineCompass } from "react-icons/ai";
 import { HiUserGroup } from "react-icons/hi";
-import { BiSearch } from "react-icons/bi";
 import { IoSettingsOutline } from "react-icons/io5";
 import { AiOutlineCloud } from "react-icons/ai";
 import { MdOutlineAddBox } from "react-icons/md";
@@ -13,7 +12,7 @@ import logo from "../Navbar/greenxLogo.svg";
 import userImg from "../Navbar/resize.jpg";
 import { CgProfile } from "react-icons/cg";
 
-const Navbar = ({ watchList, hamburgerMenu, searchResults }) => {
+const Navbar = ({ watchList, hamburgerMenu }) => {
   return (
     <nav>
       <div className={hamburgerMenu ? "navbar active" : "navbarHeader"}>
@@ -22,7 +21,7 @@ const Navbar = ({ watchList, hamburgerMenu, searchResults }) => {
             <img src={logo} alt="img" />
           </div>
           <div className="flexCard">
-            <p>MENU</p>
+            <p className="MENU">MENU</p>
             <ul className="NavListItem">
               <Link to="/">
                 <li>{<BiHomeCircle className="icons" />} Home</li>

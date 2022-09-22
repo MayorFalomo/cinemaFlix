@@ -168,7 +168,8 @@
         display: flex;
         position: fixed;
         z-index: 999999999999999999999999999999999999999999999999999999999999 !important;
-        right: 20px;
+        /* left: 20px; */
+        right: 70%;
         top: 10px;
         color: #fff;
     }

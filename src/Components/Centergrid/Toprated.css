@@ -12,9 +12,10 @@
     cursor: pointer;
 }
 .watchlistBtns{
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: center;
+    margin: auto;
 }
 .RatedCard button{
     padding: 10px 25px;
