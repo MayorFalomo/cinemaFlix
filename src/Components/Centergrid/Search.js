@@ -1,28 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import { BiMenuAltRight } from "react-icons/bi";
+import { FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Results from "./Results";
 import "./Search.css";
 
-const Search = ({
-  watchList,
-  upComing,
-  setUpComing,
-  hamburgerMenu,
-  setHamburgerMenu,
-  MenuseeMore,
-  menuActive,
-  setMenuActive,
-  seeMore,
-  setSeeMore,
-  searchInput,
-  setSearchInput,
-  searchResults,
-}) => {
+const Search = ({ searchResults }) => {
+  const [searchActive, setSearchActive] = useState(false);
   return (
     <div className="searchContainer">
       <div className="searchFlex">
         <h1>Search Results: </h1>
-        <ul className="navItem">
+        <ul className={searchActive ? "searchMenu" : "navItems"}>
           <Link to="/">
             <li>Home </li>
           </Link>
@@ -33,11 +22,29 @@ const Search = ({
             <li>Discover </li>{" "}
           </Link>
         </ul>
+        <div className="burgerContainer">
+          {" "}
+          {searchActive ? (
+            <div
+              onClick={() => setSearchActive(!searchActive)}
+              className={searchActive ? "Times active" : "timesInActive"}
+            >
+              <p>{<FaTimes className="burgerMenu" />} </p>{" "}
+            </div>
+          ) : (
+            <div
+              onClick={() => setSearchActive(!searchActive)}
+              className={searchActive ? "activeMenu" : "inActiveMenu"}
+            >
+              <p>{<BiMenuAltRight className="burgerMenu" />} </p>
+            </div>
+          )}
+        </div>
       </div>
       <div className="searchCard">
         {searchResults.map((search) => {
           return (
-            <div key={search.id}>
+            <div className="searchArea" key={search.id}>
               <Results search={search} />
             </div>
           );

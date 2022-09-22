@@ -153,9 +153,9 @@
     }
       .hamburgerLinks{
         display: flex;
-        position: fixed;
+        position: absolute;
         z-index: 999999999999999999999999999999999999 !important;
-        right: 40px;
+        right: 20px;
         top: 10px;
         color: #fff;
     }
@@ -168,7 +168,6 @@
         display: flex;
         position: fixed;
         z-index: 999999999999999999999999999999999999999999999999999999999999 !important;
-        /* left: 20px; */
         right: 70%;
         top: 10px;
         color: #fff;

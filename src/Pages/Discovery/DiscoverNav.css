@@ -124,6 +124,7 @@ nav h4{
         align-items: flex-start;
         justify-content: start;  
         gap: 1px;
+        overflow: auto;
       }
 }
 

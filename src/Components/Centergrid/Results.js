@@ -32,7 +32,12 @@ const Results = ({ search }) => {
                 src={`${imgPath}${search?.poster_path}`}
                 alt="img Unavailable"
               />
-              <p>{search.original_title} </p>
+              <div className="searchText">
+                <p>{search.original_title} </p>
+                <p>
+                  <span>Overview:</span> {search.overview}{" "}
+                </p>
+              </div>
             </div>
           ) : (
             <div className="noImage">

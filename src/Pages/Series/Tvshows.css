@@ -234,7 +234,7 @@
         transition: 0.5s ease;
         width: 100%;
         top: -200vh;
-        position: absolute;
+        position: fixed;
     }
      .itemClass.active{
         top: 0;
@@ -268,9 +268,9 @@
     }
     .fatime{
         display: flex;
-        position: absolute;
-        right: 30px;
-        top: 30px;
+        position: fixed;
+        right: 20px;
+        top: 20px;
         z-index: 9999999999
     }
 }
