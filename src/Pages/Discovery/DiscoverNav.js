@@ -47,11 +47,15 @@ const DiscoverNav = ({
                 <p className="length">{watchList?.length} </p>
               </li>
             </Link>
-            <li>{<HiUserGroup className="icons" />} Community</li>
+            <li className="community">
+              {<HiUserGroup className="icons" />} Community
+            </li>
           </ul>
 
           <ul>
-            <li>{<CgProfile className="icons" />} Profile </li>
+            <li className="profile">
+              {<CgProfile className="icons" />} Profile{" "}
+            </li>
             <li>{<IoSettingsOutline className="icons" />} Setting </li>
             <li>{<AiOutlineCloud className="icons" />} Help </li>
             <li>{<BiExit className="icons" />} Exit </li>

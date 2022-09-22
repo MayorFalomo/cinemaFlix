@@ -18,10 +18,10 @@ const Series = ({ watchList, setWatchList }) => {
   useEffect(() => {
     setTimeout(() => {
       setCompleted(true);
-    }, 2000);
+    }, 1000);
   }, []);
 
-  const API_URL = "http://api.themoviedb.org/3";
+  const API_URL = "https://api.themoviedb.org/3";
 
   const fetchSeries = async (searchInput) => {
     const type = searchInput ? "search/tv" : "tv/popular";

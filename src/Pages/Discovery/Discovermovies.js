@@ -7,7 +7,6 @@ const Discovermovies = ({ discover }) => {
   return (
     <div className="DiscoverCard">
       <div className="discoverPathImg">
-        {console.log(discover)}
         <img src={`${imgPath}${discover?.poster_path} `} alt="img" />
       </div>
       <p>{discover?.original_title} </p>

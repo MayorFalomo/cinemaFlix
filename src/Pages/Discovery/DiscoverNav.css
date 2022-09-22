@@ -27,7 +27,7 @@ nav{
      display:flex;
     flex-direction:column; 
     gap: 30px;
-    margin: 30px 30px;
+    margin: 20px 30px;
 }
 .lengthCard{
     width: 220px;
@@ -47,10 +47,10 @@ nav{
 }
 
 nav ul{
-    font-size: 24px;
+    font-size: 14px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    /* gap: 10px; */
     justify-content: center;
 }
 
@@ -85,6 +85,11 @@ nav h4{
     margin: auto;
 }
 
+nav h4{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
 @media(max-width: 835px){
      .navbarD{
         position: absolute; 
@@ -106,10 +111,10 @@ nav h4{
 
     .navD{
         position: fixed;
-        z-index: 9999999999999999999999999999999 !important;
+        z-index: 9999999999999999999999999999999999 !important;
         right: 0px;
         top: 0px;
-        width: 60%;
+        width: 70%;
         height: 100vh;
         background-color: #19161F;
         color: #fff;
@@ -119,5 +124,19 @@ nav h4{
         flex-direction: column;
         align-items: flex-start;
         justify-content: start;  
+        gap: 1px;
       }
+}
+
+@media(max-width: 400px){
+   .community{
+        border: 2px red solid;
+        display: none;
+    }
+    .flexCard p{
+        display: none;
+    }
+    .profile{
+        display: none;
+    }
 }

@@ -96,7 +96,7 @@ nav h4{
 
      .hamburgerLinking{
          position: absolute; 
-        right: 20px;
+        right: 10px;
         top: 10px;
         overflow: hidden;
         z-index: 999999999999999999;
@@ -114,7 +114,7 @@ nav h4{
         position: fixed;
         z-index: 99999999999999999;
         right: 20px;
-        top: 20px;
+        top: 10px;
         color: #fff;
         transition: 0.5s ease;
     }
@@ -133,7 +133,6 @@ nav h4{
         align-items: center;
         justify-content: start;
         background-color: #fff;
-        border: 3px red solid;
     }
 
     .navb{

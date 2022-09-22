@@ -1,8 +1,8 @@
 .homeContainer{
     display: grid;
     grid-template-columns: 300px auto 400px;
-    overflow-x: hidden;
-    height: 98vh;
+    overflow: hidden;
+    height: 99vh;
 }
 
 .SeeMore{

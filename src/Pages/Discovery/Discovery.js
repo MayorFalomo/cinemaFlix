@@ -22,7 +22,7 @@ const Discovery = ({
   useEffect(() => {
     setTimeout(() => {
       setCompleted(true);
-    }, 2000);
+    }, 1000);
   }, []);
 
   return (
@@ -99,7 +99,6 @@ const Discovery = ({
                 See Less
               </button>
             </div>
-            {/* <button className="SeeMoreD">See More </button> */}
           </div>
         </>
       )}

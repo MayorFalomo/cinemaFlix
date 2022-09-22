@@ -26,7 +26,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
 
-  const SearchURL = "http://api.themoviedb.org/3";
+  const SearchURL = "https://api.themoviedb.org/3";
 
   const TopRatedURL =
     "https://api.themoviedb.org/3/movie/top_rated?api_key=543922b15105a918ffe9965a0d904660&language=en-US&page=1";

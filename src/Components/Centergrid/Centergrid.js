@@ -104,14 +104,16 @@ const Centergrid = ({
             {hamburgerMenu ? (
               <div
                 onClick={() => setHamburgerMenu(!hamburgerMenu)}
-                className={menuActive ? "hamburgerLinks" : "hamMenu active"}
+                className={
+                  hamburgerMenu ? "TimesHamburgerMenu" : "hamburgerMenuActive"
+                }
               >
                 <p>{<FaTimes className="burgerMenu" />} </p>{" "}
               </div>
             ) : (
               <div
                 onClick={() => setHamburgerMenu(!hamburgerMenu)}
-                className={menuActive ? "hamMenu active" : "hamburgerLinks"}
+                className={hamburgerMenu ? "hamMenu active" : "hamburgerLinks"}
               >
                 <p>{<BiMenuAltRight className="burgerMenu" />} </p>
               </div>
