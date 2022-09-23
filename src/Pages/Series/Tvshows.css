@@ -269,7 +269,7 @@
     .fatime{
         display: flex;
         position: fixed;
-        right: 20px;
+        right: 10px;
         top: 20px;
         z-index: 9999999999
     }
