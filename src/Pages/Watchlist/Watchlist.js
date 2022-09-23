@@ -41,7 +41,7 @@ const Watchlist = ({
         <div className="flexingWatch">
           {burgerState ? (
             <div
-              className={burgerState ? "hamburgerLinksX" : "hamMenuActiveX"}
+              className={burgerState ? "hamburgerLinksW" : "hamMenuActiveX"}
               onClick={() => setBurgerState(!burgerState)}
             >
               <p>{<FaTimes className="burgerMenuHam" />}</p>

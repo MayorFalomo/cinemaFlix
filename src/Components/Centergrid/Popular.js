@@ -2,7 +2,6 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Famous from "./Famous";
-import Known from "./Known";
 
 const Popular = ({ popular, topRated, watchList, setWatchList }) => {
   const responsive = {

@@ -135,4 +135,13 @@
         justify-content: start;  
         overflow: auto;
       }
+      .hamburgerLinksW{
+        position: fixed;
+        z-index: 999999999999999999999999999999 !important;
+        right: 65%;
+        top: 20px;
+        color: #fff;
+        transition: 0.5s ease;
+        display: flex;
+      }
 }
