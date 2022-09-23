@@ -21,7 +21,7 @@ const DiscoverNav = ({
   setDiscoverState,
 }) => {
   return (
-    <nav>
+    <nav className="DiscoverNav">
       <div className={discoverState ? "navD" : "navbarD"}>
         <div className="NavLogoImg">
           <img src={logo} alt="img" />

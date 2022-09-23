@@ -64,9 +64,9 @@
     .Times.active{
         display: flex;
          position: fixed;
-        z-index: 9999999999999999999999;
-        right: 20px;
-        top: 10px;
+        z-index: 999999999999999999999999999999 !important;
+        right: 40px;
+        top: 20px;
         color: #fff;
         transition: 0.5s ease;
     }
@@ -92,7 +92,7 @@
         left: 0;
         height: 40vh;
         width: 100vw;
-        z-index: 999999;
+        z-index: 9999;
         display: flex;
         flex-direction: column;
         justify-content:center;
