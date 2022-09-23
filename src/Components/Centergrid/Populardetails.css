@@ -60,9 +60,18 @@ margin-right: 6px;
     }
 }
 
-@media(max-width:830px){
+@media(max-width:835px){
     .detailsContainer{
         display: grid;
         grid-template-columns: 0 auto;
+    }
+     .hamburgerLinksX{
+        position: fixed;
+        z-index: 999999999999999999999999999999 !important;
+        right: 10px;
+        top: 40vh;
+        color: #fff;
+        transition: 0.5s ease;
+        display: flex;
     }
 }

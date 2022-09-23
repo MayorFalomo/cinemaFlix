@@ -7,8 +7,10 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { FaTimes } from "react-icons/fa";
 import Navbarcoming from "../Rightgrid/Navbarcoming";
 import ReactLoading from "react-loading";
+import { Link } from "react-router-dom";
+import DiscoverNav from "../../Pages/Discovery/DiscoverNav";
 
-const Populardetails = ({ watchList, burgerState, setBurgerState }) => {
+const Populardetails = ({ watchList, discoverState, setDiscoverState }) => {
   const id = useParams().id;
   const [popular, setPopular] = useState({});
   const [seeMore, setSeeMore] = useState(false);
@@ -50,11 +52,22 @@ const Populardetails = ({ watchList, burgerState, setBurgerState }) => {
         </div>
       ) : (
         <>
-          <Navbarcoming
+          <DiscoverNav
             watchList={watchList}
-            burgerState={burgerState}
-            setBurgerState={setBurgerState}
+            discoverState={discoverState}
+            setDiscoverState={setDiscoverState}
           />
+          <ul className={discoverState ? "navMenuLinks " : "navLinks"}>
+            <Link to="/">
+              <li>Home </li>
+            </Link>
+            <Link to="/series">
+              <li>Series </li>
+            </Link>
+            <Link to="/discover">
+              <li>Discover </li>{" "}
+            </Link>
+          </ul>
           <div
             style={{
               backgroundImage: `url(${backPath}${popular.backdrop_path}) `,
@@ -67,17 +80,21 @@ const Populardetails = ({ watchList, burgerState, setBurgerState }) => {
             <div className="bg-color"></div>
 
             <div className="detail">
-              {burgerState ? (
+              {discoverState ? (
                 <div
-                  className={burgerState ? "hamburgerLinksX" : "hamMenuActiveX"}
-                  onClick={() => setBurgerState(!burgerState)}
+                  className={
+                    discoverState ? "hamburgerLinksX" : "hamMenuActiveX"
+                  }
+                  onClick={() => setDiscoverState(!discoverState)}
                 >
                   <p>{<FaTimes className="burgerMenuHam" />}</p>
                 </div>
               ) : (
                 <div
-                  className={burgerState ? "hamMenuActive" : "hamburgerLinking"}
-                  onClick={() => setBurgerState(!burgerState)}
+                  className={
+                    discoverState ? "hamMenuActive" : "hamburgerLinking"
+                  }
+                  onClick={() => setDiscoverState(!discoverState)}
                 >
                   <p>{<BiMenuAltRight className="burgerMenuHam" />} </p>
                 </div>

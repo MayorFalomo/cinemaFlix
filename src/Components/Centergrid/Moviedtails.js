@@ -84,6 +84,7 @@ const Moviedtails = ({
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
+              minHeight: "100vh",
             }}
             className="detailsCard"
           >

@@ -65,7 +65,7 @@ const Centergrid = ({
               <input
                 onChange={(e) => setSearchInput(e.target.value)}
                 typeof="text"
-                placeholder="Search..."
+                placeholder="Search Movies..."
               />
             </div>
             <button className="navSearchBtn" type={"submit"}>

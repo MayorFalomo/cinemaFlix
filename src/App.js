@@ -264,8 +264,8 @@ function App() {
               element={
                 <Populardetails
                   watchList={watchList}
-                  burgerState={burgerState}
-                  setBurgerState={setBurgerState}
+                  discoverState={discoverState}
+                  setDiscoverState={setDiscoverState}
                 />
               }
             ></Route>

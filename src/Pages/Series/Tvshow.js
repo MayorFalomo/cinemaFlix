@@ -91,7 +91,7 @@ const Tvshow = ({
                 <input
                   onChange={(e) => setSearchInput(e.target.value)}
                   type={"text"}
-                  placeholder="Search..."
+                  placeholder="Search Series..."
                 />
               </div>
               <button onClick={() => effect()} className="searchBtn">

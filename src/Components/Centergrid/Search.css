@@ -65,8 +65,8 @@
         display: flex;
          position: fixed;
         z-index: 999999999999999999999999999999 !important;
-        right: 40px;
-        top: 20px;
+        right: 20px;
+        top: 40vh;
         color: #fff;
         transition: 0.5s ease;
     }
