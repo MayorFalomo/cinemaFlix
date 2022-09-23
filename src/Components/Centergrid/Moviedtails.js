@@ -6,6 +6,8 @@ import { FaTimes } from "react-icons/fa";
 import { BiMenuAltRight } from "react-icons/bi";
 import ReactLoading from "react-loading";
 import Navbarcoming from "../Rightgrid/Navbarcoming";
+import DiscoverNav from "../../Pages/Discovery/DiscoverNav";
+import { Link } from "react-router-dom";
 
 const Moviedtails = ({
   watchList,
@@ -57,13 +59,24 @@ const Moviedtails = ({
         </div>
       ) : (
         <>
-          <Navbarcoming
+          <DiscoverNav
             watchList={watchList}
             burgerState={burgerState}
             setBurgerState={setBurgerState}
             discoverState={discoverState}
             setDiscoverState={setDiscoverState}
           />
+          <ul className={discoverState ? "navMenuLinks " : "navLinks"}>
+            <Link to="/">
+              <li>Home </li>
+            </Link>
+            <Link to="/series">
+              <li>Series </li>
+            </Link>
+            <Link to="/discover">
+              <li>Discover </li>{" "}
+            </Link>
+          </ul>
 
           <div
             style={{
@@ -76,17 +89,17 @@ const Moviedtails = ({
           >
             <div className="bg-color"></div>
             <div className="detail">
-              {burgerState ? (
+              {discoverState ? (
                 <div
-                  onClick={() => setBurgerState(!burgerState)}
-                  className={burgerState ? "hamBurgerD" : "hamburgerActiveD"}
+                  onClick={() => setDiscoverState(!discoverState)}
+                  className={discoverState ? "hamBurgerD" : "hamburgerActiveD"}
                 >
                   <p>{<FaTimes className="DiscoverMenu" />} </p>{" "}
                 </div>
               ) : (
                 <div
-                  onClick={() => setBurgerState(!burgerState)}
-                  className={burgerState ? "burgerActiveD" : "burgerD"}
+                  onClick={() => setDiscoverState(!discoverState)}
+                  className={discoverState ? "burgerActiveD" : "burgerD"}
                 >
                   <p>{<BiMenuAltRight className="DiscoverMenu" />} </p>
                 </div>

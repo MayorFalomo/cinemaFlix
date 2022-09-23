@@ -5,6 +5,7 @@ import DiscoverNav from "./DiscoverNav";
 import { FaTimes } from "react-icons/fa";
 import { BiMenuAltRight } from "react-icons/bi";
 import ReactLoading from "react-loading";
+import { Link } from "react-router-dom";
 
 const Discovery = ({
   watchList,
@@ -48,6 +49,18 @@ const Discovery = ({
           <div className="discoverMoreFlex">
             <div className="discoverHeading">
               <h1>Discover More Movies </h1>
+
+              <ul className={discoverState ? "navMenuLinks " : "navLinks"}>
+                <Link to="/">
+                  <li>Home </li>
+                </Link>
+                <Link to="/series">
+                  <li>Series </li>
+                </Link>
+                <Link to="/discover">
+                  <li>Discover </li>{" "}
+                </Link>
+              </ul>
               {discoverState ? (
                 <div
                   onClick={() => setDiscoverState(!discoverState)}

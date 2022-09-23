@@ -10,16 +10,7 @@ import logo from "../../Components/Navbar/greenxLogo.svg";
 import userImg from "../../Components/Navbar/resize.jpg";
 import "./DiscoverNav.css";
 
-const DiscoverNav = ({
-  watchList,
-  setWatchlist,
-  discover,
-  setDiscover,
-  discoverMore,
-  setDiscoverMore,
-  discoverState,
-  setDiscoverState,
-}) => {
+const DiscoverNav = ({ watchList, discoverState, setDiscoverState }) => {
   return (
     <nav className="DiscoverNav">
       <div className={discoverState ? "navD" : "navbarD"}>
