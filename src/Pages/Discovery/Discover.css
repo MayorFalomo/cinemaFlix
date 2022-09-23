@@ -30,12 +30,12 @@
     display: inline-flex;
     gap: 10px;
     flex-wrap: wrap;
-    margin: 10px 10px;
+    margin: 10px 30px;
     position: relative;
     z-index: 1;
 }
 .DiscoverCard{
-    width: 300px;
+    width: 250px;
     height: auto;
 }
 .DiscoverCard p{
@@ -123,4 +123,13 @@
     }
 
    
+}
+
+@media(max-width:660px){
+    .discoverFlex{
+        width: 90%;
+    }
+    .DiscoverCard{
+        width: 100%;
+    }
 }

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { FaTimes } from "react-icons/fa";
 import Navbarcoming from "../../Components/Rightgrid/Navbarcoming";
+import DiscoverNav from "../Discovery/DiscoverNav";
 import Seenmovies from "./Seenmovies";
 
 const Watchlist = ({

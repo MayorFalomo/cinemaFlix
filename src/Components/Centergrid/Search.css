@@ -45,7 +45,7 @@
     width: 100%;
 }
 .searchText{
-    width: 90vw;
+    width: 100%;
 }
 
 @media(max-width: 600px){

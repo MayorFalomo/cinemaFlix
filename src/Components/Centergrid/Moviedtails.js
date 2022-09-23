@@ -4,8 +4,8 @@ import axios from "axios";
 import "../Centergrid/Moviedetails.css";
 import { FaTimes } from "react-icons/fa";
 import { BiMenuAltRight } from "react-icons/bi";
-import DiscoverNav from "../../Pages/Discovery/DiscoverNav";
 import ReactLoading from "react-loading";
+import Navbarcoming from "../Rightgrid/Navbarcoming";
 
 const Moviedtails = ({
   watchList,
@@ -57,7 +57,7 @@ const Moviedtails = ({
         </div>
       ) : (
         <>
-          <DiscoverNav
+          <Navbarcoming
             watchList={watchList}
             burgerState={burgerState}
             setBurgerState={setBurgerState}
@@ -75,19 +75,18 @@ const Moviedtails = ({
             className="detailsCard"
           >
             <div className="bg-color"></div>
-
             <div className="detail">
-              {discoverState ? (
+              {burgerState ? (
                 <div
-                  onClick={() => setDiscoverState(!discoverState)}
-                  className={discoverState ? "hamBurgerD" : "hamburgerActiveD"}
+                  onClick={() => setBurgerState(!burgerState)}
+                  className={burgerState ? "hamBurgerD" : "hamburgerActiveD"}
                 >
                   <p>{<FaTimes className="DiscoverMenu" />} </p>{" "}
                 </div>
               ) : (
                 <div
-                  onClick={() => setDiscoverState(!discoverState)}
-                  className={discoverState ? "burgerActiveD" : "burgerD"}
+                  onClick={() => setBurgerState(!burgerState)}
+                  className={burgerState ? "burgerActiveD" : "burgerD"}
                 >
                   <p>{<BiMenuAltRight className="DiscoverMenu" />} </p>
                 </div>

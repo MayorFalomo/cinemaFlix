@@ -9,11 +9,11 @@ const Discovermovies = ({ discover }) => {
       <div className="discoverPathImg">
         <img src={`${imgPath}${discover?.poster_path} `} alt="img" />
       </div>
-      <p>{discover?.original_title} </p>
+      <p>Title: {discover?.original_title} </p>
       {seeMore ? (
-        <p>{discover?.overview}</p>
+        <p>Overview: {discover?.overview}</p>
       ) : (
-        <p>{discover?.overview.slice(0, 100)} .... </p>
+        <p>Overview: {discover?.overview.slice(0, 100)} .... </p>
       )}
       {
         <p className="SeeMore" onClick={() => setSeeMore(!seeMore)}>
