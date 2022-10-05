@@ -23,6 +23,7 @@ const Series = ({ watchList, setWatchList }) => {
 
   const API_URL = "https://api.themoviedb.org/3";
 
+  // Api call for querying for Series
   const fetchSeries = async (searchInput) => {
     const type = searchInput ? "search/tv" : "tv/popular";
     const {
@@ -38,6 +39,7 @@ const Series = ({ watchList, setWatchList }) => {
     setPopularSeries(results);
   };
 
+  // Api call to query the movie and video trailer
   const fetchShow = async (id) => {
     const { data } = await axios.get(`${API_URL}/tv/${id}`, {
       params: {
@@ -48,6 +50,7 @@ const Series = ({ watchList, setWatchList }) => {
     return data;
   };
 
+  //Adding the id for the trailer
   const playSeries = async (tv) => {
     setPlaySeriesTrailer(false); //close the youtube component when you click on another movie
     const Tvseries = await fetchShow(tv.id);

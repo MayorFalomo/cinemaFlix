@@ -147,6 +147,8 @@ const Centergrid = ({
                 playMovieTrailer={playMovieTrailer}
                 setPlayMovieTrailer={setPlayMovieTrailer}
                 playMovie={playMovie}
+                watchList={watchList}
+                setWatchList={setWatchList}
               />
             );
           })}

@@ -1,6 +1,9 @@
 import React from "react";
 import { useState } from "react";
+import { AiOutlinePlusSquare } from "react-icons/ai";
+import { BsCheck2All } from "react-icons/bs";
 import YouTube from "react-youtube";
+import Watchlist from "../../Pages/Watchlist/Watchlist";
 import "./Trending.css";
 // import 'react-slideshow-image/dist/styles.css';
 // import AwesomeSlider from 'react-awesome-slider';
@@ -12,11 +15,18 @@ const Trending = ({
   playMovieTrailer,
   setPlayMovieTrailer,
   playMovie,
+  watchList,
+  setWatchList,
 }) => {
   const imagePath = "https://image.tmdb.org/t/p/w500";
   const imgPath = "https://image.tmdb.org/t/p/w1280";
 
   const [seeMore, setSeeMore] = useState(false);
+  const [displayButton, setDisplayButton] = useState(false);
+
+  const addToCart = (param) => {
+    setWatchList([...watchList, param]);
+  };
 
   const playTrailer = () => {
     const trailer = selectedTrend.videos.results.find(
@@ -62,27 +72,50 @@ const Trending = ({
             <p className="SeeMore" onClick={() => setSeeMore(!seeMore)}>
               {seeMore ? "See Less" : "See More"}{" "}
             </p>
-            {selectedTrend?.videos && playMovieTrailer && playMovie(movie)
-              ? playTrailer()
-              : " "}
-            {playMovieTrailer ? (
-              <button
-                className="TrailerBtn"
-                onClick={() => {
-                  setPlayMovieTrailer(false);
-                }}
-              >
-                Close Trailer{" "}
-              </button>
-            ) : (
-              <button
-                className="TrailerBtn"
-                onClick={() => setPlayMovieTrailer(true)}
-              >
-                Play Trailer{" "}
-              </button>
-            )}
-            <button className="watchBtn">Watch Movie </button>
+            <div className="CartBtn">
+              {selectedTrend?.videos && playMovieTrailer && playMovie(movie)
+                ? playTrailer()
+                : " "}
+              {playMovieTrailer ? (
+                <button
+                  className="TrailerBtn"
+                  onClick={() => {
+                    setPlayMovieTrailer(false);
+                  }}
+                >
+                  Close Trailer{" "}
+                </button>
+              ) : (
+                <button
+                  className="TrailerBtn"
+                  onClick={() => setPlayMovieTrailer(true)}
+                >
+                  Play Trailer{" "}
+                </button>
+              )}
+              {displayButton ? (
+                <div className="watchlistButtons">
+                  <button
+                    className="addedRated"
+                    onClick={() => setDisplayButton(displayButton)}
+                  >
+                    Added {<BsCheck2All className="check" />}
+                  </button>{" "}
+                </div>
+              ) : (
+                <div className="addedBtns">
+                  <button
+                    className="watchBtns"
+                    onClick={() => {
+                      addToCart(movie);
+                      setDisplayButton(!displayButton);
+                    }}
+                  >
+                    Add to Watchlist {<AiOutlinePlusSquare className="plus" />}
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

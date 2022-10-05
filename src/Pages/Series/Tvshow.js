@@ -61,6 +61,7 @@ const Tvshow = ({
     },
   };
 
+  // For the Youtube player
   const playTrailer = () => {
     const trailer = selectedSeries.videos.results.find(
       (vid) => vid.name === "Official Trailer" || "Official Final Trailer"

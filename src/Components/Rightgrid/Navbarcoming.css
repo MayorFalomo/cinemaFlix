@@ -110,10 +110,10 @@ nav h4{
     .hamMenuActive{
         display: none;
     }
-    .hamburgerLinksX{
+    .hamburgerLinksXs{
         position: fixed;
         z-index: 99999999999999999;
-        right: 20px;
+        right: 70%;
         top: 10px;
         color: #fff;
         transition: 0.5s ease;

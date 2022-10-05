@@ -2,7 +2,6 @@ import React from "react";
 import Rated from "./Rated";
 import "./Toprated.css";
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 
 const Toprated = ({
   movies,
@@ -42,12 +41,7 @@ const Toprated = ({
   return (
     <div className="rating">
       <div className="topratedSect">
-        {/* {" "}
-        {searchInput.length > 2 ? (
-          <h1>Search Results </h1>
-        ) : ( */}
         <h1>Top Rated⭐ </h1>
-        {/* )} */}
       </div>
       <Carousel
         swipeable={false}

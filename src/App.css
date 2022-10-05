@@ -8,24 +8,15 @@
 
 .App{
     background-color: #19161F ;
-    overflow: hidden;
 }
-.App::-webkit-scrollbar {
-  width: 0;
-  overflow: hidden;
-}
+
 
 body{
     background-color:#19161F;
     color: white;
     font-family: "Poppins";
-    overflow: hidden;
 }
 
-body::-webkit-scrollbar {
-  width: 0;
-  overflow: hidden;
-}
 
 li{
     list-style:none;

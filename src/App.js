@@ -46,6 +46,7 @@ function App() {
     }, 5000);
   }, []);
 
+  //Api call for searching for movies
   const fetchMovies = async (searchInput) => {
     const type = "search";
     const {
@@ -56,16 +57,14 @@ function App() {
         query: searchInput,
       },
     });
-    // setTopRated(results);
     setSearchResults(results);
   };
 
-  // console.log(searchInput);
-  // console.log(searchResults);
   useEffect(() => {
     fetchMovies();
   }, []);
 
+  // So it shows the first movie for trending
   const fetchTrending = async () => {
     const {
       data: { results },
@@ -78,6 +77,7 @@ function App() {
     await playMovie(results[0]);
   };
 
+  // Api call for Trending movies and query to watch Trailer
   const playTrending = async (id) => {
     const { data } = await axios.get(`${TopRatedURL}/movie/${id}`, {
       params: {
@@ -88,11 +88,13 @@ function App() {
     return data;
   };
 
+  //To get the id of the movie for trailer...Not implemented yet though
   const playMovie = async (movie) => {
     setPlayMovieTrailer(false);
     const Movietrailer = await playTrending(movie.id);
     setSelectedTrend(Movietrailer);
   };
+
   useEffect(() => {
     playMovie(movies);
   }, []);
@@ -101,6 +103,7 @@ function App() {
     fetchTrending();
   }, []);
 
+  // Upcoming Movies Api Call
   useEffect(() => {
     axios
       .get(upComingUrl)
@@ -108,6 +111,7 @@ function App() {
       .catch((err) => console.log(err));
   }, [upComingUrl]);
 
+  //Toprated Movies Api call
   useEffect(() => {
     axios
       .get(TopRatedURL)
@@ -115,6 +119,7 @@ function App() {
       .catch((err) => console.log(err));
   }, [TopRatedURL]);
 
+  //Popular Movies Api Call
   useEffect(() => {
     axios
       .get(popularUrl)
@@ -122,6 +127,7 @@ function App() {
       .catch((err) => console.log(err));
   }, [popularUrl]);
 
+  //Discover Movies Api Call
   useEffect(() => {
     axios
       .get(discoverUrl)

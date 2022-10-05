@@ -57,7 +57,7 @@ const Upcoming = ({
                 {burgerState ? (
                   <div
                     className={
-                      burgerState ? "hamburgerLinksX" : "hamMenuActiveX"
+                      burgerState ? "hamburgerLinksXs" : "hamMenuActiveX"
                     }
                     onClick={() => setBurgerState(!burgerState)}
                   >

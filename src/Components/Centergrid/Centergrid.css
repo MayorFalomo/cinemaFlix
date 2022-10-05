@@ -6,7 +6,7 @@
 }
 
 .centerGridCard{
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 .centerContainer::-webkit-scrollbar{
     width: 0;
