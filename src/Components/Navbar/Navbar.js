@@ -16,7 +16,15 @@ const Navbar = ({ watchList, hamburgerMenu }) => {
   return (
     <nav>
       <div className={hamburgerMenu ? "navbar active" : "navbarHeader"}>
-        <div className={hamburgerMenu ? "clinks active" : "clinks"}>
+        <div
+          className={
+            hamburgerMenu
+              ? "clinks active"
+              : "clinks" || hamburgerMenu
+              ? "itemClass.active"
+              : "itemClass"
+          }
+        >
           <div className="NavLogoImg">
             <img src={logo} alt="img" />
           </div>

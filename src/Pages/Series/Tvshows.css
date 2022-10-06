@@ -265,13 +265,14 @@
         right: 30px;
         top: 30px;
         z-index: 9999999999;
+
     }
-    .fatime{
+    .fatime.active {
         display: flex;
         position: fixed;
         right: 10px;
-        top: 20px;
-        z-index: 9999999999
+        top: 50%;
+        z-index: 9999999999;
     }
 }
 @media(max-width: 450px){

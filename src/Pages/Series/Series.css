@@ -21,5 +21,6 @@
     .SeriesContainer {
         display: grid;
         grid-template-columns: 0 auto;
+        overflow: hidden;
     }
 }

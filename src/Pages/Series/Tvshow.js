@@ -40,7 +40,7 @@ const Tvshow = ({
       slidesToSlide: 1, // optional, default to 1.
     },
     system: {
-      breakpoint: { max: 1850, min: 1650 },
+      breakpoint: { max: 1850, min: 1500 },
       items: 4,
       slidesToSlide: 2, // optional, default to 1.
     },

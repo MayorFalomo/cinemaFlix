@@ -107,7 +107,7 @@
         display: flex;
         position: absolute;
         z-index: 99999999999999999;
-     right: 30px; 
+        right: 30px; 
         top: 30px; 
         color: #fff;
         transition: 0.5s ease;
@@ -167,7 +167,7 @@
     .TimesHamburgerMenu{
         display: flex;
         position: fixed;
-        z-index: 999999999999999999999999999999999999999999999999999999999999 !important;
+        z-index: 99999999999999999999999999999999999999 !important;
         right: 70%;
         top: 10px;
         color: #fff;
