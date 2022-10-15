@@ -7,7 +7,8 @@
 }
 .searchCard{
     display: flex;
-    align-items: center;
+    justify-content: space-around;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 20px 30px;
     margin-left: 20px;
@@ -28,6 +29,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
 }
 .navItems{
     display: flex;
@@ -38,12 +40,6 @@
     display: none;
 }
 
-.searchResult{
-    width: 100%;
-}
-.searchArea{
-    width: 100%;
-}
 .searchText{
     width: 100%;
 }

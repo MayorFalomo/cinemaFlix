@@ -12,7 +12,7 @@ const Toprated = ({
 }) => {
   const responsive = {
     Monitor: {
-      breakpoint: { max: 2000, min: 1850 },
+      breakpoint: { max: 2500, min: 1850 },
       items: 5,
       slidesToSlide: 2, // optional, default to 1.
     },

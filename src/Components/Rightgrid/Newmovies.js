@@ -28,7 +28,6 @@ const Newmovies = ({ upComing, setUpComing }) => {
           }
         </div>
       </div>
-      {/* <button className="newBtn">Add to Watchlist</button> */}
     </div>
   );
 };

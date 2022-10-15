@@ -17,7 +17,6 @@ nav{
 
 nav::-webkit-scrollbar {
   width: 0;
-  overflow: hidden;
 }
 
 .lengthList{  
