@@ -16,6 +16,7 @@ const Discovery = ({
   setDiscoverMore,
   discoverState,
   setDiscoverState,
+  genres,
 }) => {
   const [loading, setLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
@@ -81,7 +82,7 @@ const Discovery = ({
               {discover.slice(0, discoverMore).map((discover) => {
                 return (
                   <div key={discover.id} className="discoverFlex">
-                    <Discovermovies discover={discover} />
+                    <Discovermovies discover={discover} genres={genres} />
                   </div>
                 );
               })}

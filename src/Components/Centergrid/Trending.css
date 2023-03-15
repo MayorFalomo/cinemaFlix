@@ -142,6 +142,11 @@
   gap: 5px;
 }
 
+.span{
+  display: flex;
+  gap: 2px;
+}
+
 @media(max-width: 1000px){
   #movieDetails{
     display:flex;

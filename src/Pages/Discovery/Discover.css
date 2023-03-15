@@ -35,7 +35,7 @@
     z-index: 1;
 }
 .DiscoverCard{
-    width: 250px;
+    width: 300px;
     height: auto;
 }
 .DiscoverCard p{
@@ -95,6 +95,12 @@
     display: none;
 }
 
+.discGen{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2px;
+}
 
 @media(max-width: 835px ){
 

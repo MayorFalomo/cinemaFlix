@@ -32,6 +32,7 @@ const Homepage = ({
   hamburgerMenu,
   setHamburgerMenu,
   playMovie,
+  genres,
 }) => {
   return (
     <div className="homeContainer">
@@ -83,6 +84,7 @@ const Homepage = ({
           setMenuActive={setMenuActive}
           hamburgerMenu={hamburgerMenu}
           setHamburgerMenu={setHamburgerMenu}
+          genres={genres}
         />
       )}
       <Rightgrid
@@ -97,6 +99,7 @@ const Homepage = ({
         setMenuActive={setMenuActive}
         searchResults={searchResults}
         setSearchResults={setSearchResults}
+        genres={genres}
       />
     </div>
   );

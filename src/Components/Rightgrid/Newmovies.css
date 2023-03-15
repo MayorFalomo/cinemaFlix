@@ -14,6 +14,12 @@
     width: 100%;
 }
 
+.genreCon{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
 .newText{
     width: 100%;
     display: flex;

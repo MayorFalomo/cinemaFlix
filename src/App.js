@@ -25,7 +25,7 @@ function App() {
   const [playMovieTrailer, setPlayMovieTrailer] = useState(false);
   const [loading, setLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
-
+  const [genres, setGenres] = useState([]);
   const SearchURL = "https://api.themoviedb.org/3";
 
   const TopRatedURL =
@@ -39,11 +39,13 @@ function App() {
 
   const discoverUrl = `https://api.themoviedb.org/3/discover/movie?api_key=543922b15105a918ffe9965a0d904660&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=1&with_watch_monetization_types=flatrate`;
 
+  const genre = `https://api.themoviedb.org/3/genre/movie/list?api_key=543922b15105a918ffe9965a0d904660&language=en-US`;
+
   // console.log(searchResults);
   useEffect(() => {
     setTimeout(() => {
       setCompleted(true);
-    }, 5000);
+    }, 3000);
   }, []);
 
   //Api call for searching for movies
@@ -64,16 +66,18 @@ function App() {
     fetchMovies();
   }, []);
 
-  // So it shows the first movie for trending
+  //* So it shows the first movie for trending
   const fetchTrending = async () => {
     const {
       data: { results },
     } = await axios.get(`${trendingUrl}`, {
       params: {
         api_key: "543922b15105a918ffe9965a0d904660",
+        append_to_response: "videos",
       },
     });
     setMovies(results);
+    // console.log(results, "results");
     await playMovie(results[0]);
   };
 
@@ -81,12 +85,30 @@ function App() {
   const playTrending = async (id) => {
     const { data } = await axios.get(`${TopRatedURL}/movie/${id}`, {
       params: {
-        api_key: "543922b15105a918ffe9965a0d904660",
+        api_key: "543922b15105a918ffe9965a0d904660&",
         append_to_response: "videos",
       },
     });
     return data;
   };
+
+  // const playTrendingMovieTrailer = async (id) => {
+  //   await axios
+  //     .get(
+  //       `https://api.themoviedb.org/3/movie/157336?api_key=543922b15105a918ffe9965a0d904660&append_to_response=videos`
+  //     )
+  //     .then((res) => {
+  //       // setMovies(res.data);
+  //       console.log(res.data, "new result");
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
+
+  // useEffect(() => {
+  //   playTrendingMovieTrailer();
+  // }, []);
 
   //To get the id of the movie for trailer...Not implemented yet though
   const playMovie = async (movie) => {
@@ -110,6 +132,15 @@ function App() {
       .then((res) => setUpcoming(res.data.results))
       .catch((err) => console.log(err));
   }, [upComingUrl]);
+
+  useEffect(() => {
+    axios
+      .get(genre)
+      .then((res) => setGenres(res.data.genres))
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [genre]);
 
   //Toprated Movies Api call
   useEffect(() => {
@@ -188,20 +219,27 @@ function App() {
                     fetchMovies={fetchMovies}
                     watchList={watchList}
                     setWatchList={setWatchList}
-                    playMovie={playMovie}
+                    // playMovie={playMovie}
                     seeMore={seeMore}
                     setSeeMore={setSeeMore}
                     menuActive={menuActive}
                     setMenuActive={setMenuActive}
                     hamburgerMenu={hamburgerMenu}
                     setHamburgerMenu={setHamburgerMenu}
+                    genres={genres}
+                    setGenres={setGenres}
                   />
                 }
               />
               <Route
                 path="/series"
                 element={
-                  <Series watchList={watchList} setWatchList={setWatchList} />
+                  <Series
+                    watchList={watchList}
+                    setWatchList={setWatchList}
+                    genres={genres}
+                    setGenres={setGenres}
+                  />
                 }
               />
               <Route
@@ -230,6 +268,7 @@ function App() {
                   setDiscoverMore={setDiscoverMore}
                   discoverState={discoverState}
                   setDiscoverState={setDiscoverState}
+                  genres={genres}
                 />
               }
             />
@@ -248,6 +287,7 @@ function App() {
                   setMenuActive={setMenuActive}
                   burgerState={burgerState}
                   setBurgerState={setBurgerState}
+                  genres={genres}
                 />
               }
             />
@@ -260,6 +300,8 @@ function App() {
                   setBurgerState={setBurgerState}
                   discoverState={discoverState}
                   setDiscoverState={setDiscoverState}
+                  genres={genres}
+                  setGenres={setGenres}
                 />
               }
             >
@@ -272,6 +314,7 @@ function App() {
                   watchList={watchList}
                   discoverState={discoverState}
                   setDiscoverState={setDiscoverState}
+                  genres={genres}
                 />
               }
             ></Route>

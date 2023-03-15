@@ -4,10 +4,8 @@ import { AiOutlinePlusSquare } from "react-icons/ai";
 import { BsCheck2All } from "react-icons/bs";
 import YouTube from "react-youtube";
 import Watchlist from "../../Pages/Watchlist/Watchlist";
+import Trendgenre from "./Trendgenre";
 import "./Trending.css";
-// import 'react-slideshow-image/dist/styles.css';
-// import AwesomeSlider from 'react-awesome-slider';
-// import 'react-awesome-slider/dist/styles.css'
 
 const Trending = ({
   movie,
@@ -17,6 +15,7 @@ const Trending = ({
   playMovie,
   watchList,
   setWatchList,
+  genres,
 }) => {
   const imagePath = "https://image.tmdb.org/t/p/w500";
   const imgPath = "https://image.tmdb.org/t/p/w1280";
@@ -27,6 +26,8 @@ const Trending = ({
   const addToCart = (param) => {
     setWatchList([...watchList, param]);
   };
+
+  // console.log(selectedTrend, "select");
 
   const playTrailer = () => {
     const trailer = selectedTrend.videos.results.find(
@@ -62,7 +63,14 @@ const Trending = ({
             <h2>{movie?.name} </h2>
             <h2>{movie?.title} </h2>
             <h5>
-              {movie?.release_date} | {movie?.adult ? "PG-18" : "PG-13"}{" "}
+              {movie?.release_date} | {movie?.adult ? "PG-18" : "PG-13"} |{" "}
+              <span className="span">
+                {genres.map((genre, index) => (
+                  <div key={index}>
+                    <Trendgenre genre={genre} movie={movie} />
+                  </div>
+                ))}
+              </span>
             </h5>
             {seeMore ? (
               <p>{movie?.overview}</p>

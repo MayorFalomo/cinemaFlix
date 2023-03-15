@@ -9,8 +9,14 @@ import Navbarcoming from "../Rightgrid/Navbarcoming";
 import ReactLoading from "react-loading";
 import { Link } from "react-router-dom";
 import DiscoverNav from "../../Pages/Discovery/DiscoverNav";
+import Populargenre from "./Populargenre";
 
-const Populardetails = ({ watchList, discoverState, setDiscoverState }) => {
+const Populardetails = ({
+  watchList,
+  discoverState,
+  setDiscoverState,
+  genres,
+}) => {
   const id = useParams().id;
   const [popular, setPopular] = useState({});
   const [seeMore, setSeeMore] = useState(false);
@@ -114,9 +120,6 @@ const Populardetails = ({ watchList, discoverState, setDiscoverState }) => {
                   <span> Language:</span> {popular.original_language}{" "}
                 </p>
                 <p>
-                  <span> Popularity: </span> {popular?.popularity}{" "}
-                </p>
-                <p>
                   <span> Release Date:</span> {popular?.release_date}{" "}
                 </p>
                 <p>
@@ -128,6 +131,13 @@ const Populardetails = ({ watchList, discoverState, setDiscoverState }) => {
                 <p>
                   <span> Tagline:</span> {popular?.tagline}{" "}
                 </p>
+                <div className="genrePop">
+                  {genres.map((genre, index) => (
+                    <div key={index} className="popularGenre">
+                      <Populargenre genre={genre} popular={popular} />
+                    </div>
+                  ))}
+                </div>
                 {seeMore ? (
                   <p>Overview: {popular?.overview} </p>
                 ) : (

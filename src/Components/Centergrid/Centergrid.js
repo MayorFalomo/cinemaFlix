@@ -31,6 +31,8 @@ const Centergrid = ({
   setMenuActive,
   hamburgerMenu,
   setHamburgerMenu,
+  genres,
+  setGenres,
 }) => {
   const responsive = {
     desktop: {
@@ -149,6 +151,7 @@ const Centergrid = ({
                 playMovie={playMovie}
                 watchList={watchList}
                 setWatchList={setWatchList}
+                genres={genres}
               />
             );
           })}
@@ -159,12 +162,15 @@ const Centergrid = ({
           watchList={watchList}
           setWatchList={setWatchList}
           searchInput={searchInput}
+          genres={genres}
+          setGenres={setGenres}
         />
         <Popular
           topRated={topRated}
           popular={popular}
           watchList={watchList}
           setWatchList={setWatchList}
+          genres={genres}
         />
       </div>
     </div>

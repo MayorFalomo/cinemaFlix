@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import NewGenre from "./NewGenre";
 import "./Newmovies.css";
 
-const Newmovies = ({ upComing, setUpComing }) => {
+const Newmovies = ({ upComing, setUpComing, genres }) => {
   const imgPath = "https://image.tmdb.org/t/p/w500";
 
   const [seeMore, setSeeMore] = useState(false);
@@ -13,6 +14,15 @@ const Newmovies = ({ upComing, setUpComing }) => {
         </div>
         <div className="newText">
           <p> Release Date: {upComing?.release_date} </p>
+          <div className="genreCon">
+            {genres.map((genre, index) => {
+              return (
+                <div key={index}>
+                  <NewGenre genre={genre} upComing={upComing} />{" "}
+                </div>
+              );
+            })}
+          </div>
           <h2>{upComing?.original_title} </h2>
           {seeMore ? (
             <p className="seeMoreText">{upComing?.overview}</p>

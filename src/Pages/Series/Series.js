@@ -5,7 +5,7 @@ import "./Series.css";
 import Tvshow from "./Tvshow";
 import ReactLoading from "react-loading";
 
-const Series = ({ watchList, setWatchList }) => {
+const Series = ({ watchList, setWatchList, genres }) => {
   const [searchInput, setSearchInput] = useState(" ");
   const [popularSeries, setPopularSeries] = useState([]);
   const [selectedSeries, setSelectedSeries] = useState({});
@@ -22,7 +22,6 @@ const Series = ({ watchList, setWatchList }) => {
   }, []);
 
   const API_URL = "https://api.themoviedb.org/3";
-
   // Api call for querying for Series
   const fetchSeries = async (searchInput) => {
     const type = searchInput ? "search/tv" : "tv/popular";
@@ -35,7 +34,7 @@ const Series = ({ watchList, setWatchList }) => {
       },
     });
 
-    await playSeries(results[0]);
+    await playSeries(results[0]); //For showing the first poster
     setPopularSeries(results);
   };
 
@@ -98,6 +97,7 @@ const Series = ({ watchList, setWatchList }) => {
             setBurgerActive={setBurgerActive}
             readMore={readMore}
             setReadMore={setReadMore}
+            genres={genres}
           />
         </>
       )}

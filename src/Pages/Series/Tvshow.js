@@ -6,6 +6,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
 import YouTube from "react-youtube";
+import Genres from "./Genres";
 import Tvshows from "./Tvshows";
 
 const Tvshow = ({
@@ -24,6 +25,7 @@ const Tvshow = ({
   setBurgerActive,
   readMore,
   setReadMore,
+  genres,
 }) => {
   const searchSeries = (e) => {
     e.preventDefault();
@@ -140,11 +142,27 @@ const Tvshow = ({
         <div className="cardText">
           <h1>{selectedSeries?.name} </h1>
           <h1>{selectedSeries?.original_title} </h1>
-          <p className="extraInfo">
+          <div className="extraInfo">
             Date: {selectedSeries?.first_air_date} |{" "}
             {selectedSeries?.episode_run_time}
-            minutes | Seasons: {selectedSeries?.number_of_seasons}
-          </p>
+            minutes | Seasons: {selectedSeries?.number_of_seasons} |{" "}
+            <span>
+              {genres.map((genre, index) => {
+                return (
+                  <span key={index}>
+                    <Genres popularSeries={popularSeries} genre={genre} />
+                  </span>
+                );
+              })}
+            </span>
+            <span>
+              {popularSeries.map((pop, index) => (
+                <span key={index}>
+                  <Genres pop={pop} />{" "}
+                </span>
+              ))}
+            </span>
+          </div>
           {readMore ? (
             <p className="overView"> {selectedSeries?.overview}</p>
           ) : (

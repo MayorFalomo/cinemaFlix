@@ -16,6 +16,7 @@ const Upcoming = ({
   setMenuActive,
   burgerState,
   setBurgerState,
+  genres,
 }) => {
   const [loading, setLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
@@ -79,7 +80,11 @@ const Upcoming = ({
               {upComing.map((upComing) => {
                 return (
                   <div className="map-Container" key={upComing.id}>
-                    <Newmovies upComing={upComing} setUpComing={setUpComing} />
+                    <Newmovies
+                      upComing={upComing}
+                      setUpComing={setUpComing}
+                      genres={genres}
+                    />
                   </div>
                 );
               })}

@@ -13,6 +13,7 @@ const Rightgrid = ({
   hamburgerMenu,
   setHamburgerMenu,
   searchResults,
+  genres,
 }) => {
   return (
     <div className={menuActive ? "gridActive" : "RightgridContainer"}>

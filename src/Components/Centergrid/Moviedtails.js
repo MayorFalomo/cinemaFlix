@@ -5,9 +5,9 @@ import "../Centergrid/Moviedetails.css";
 import { FaTimes } from "react-icons/fa";
 import { BiMenuAltRight } from "react-icons/bi";
 import ReactLoading from "react-loading";
-import Navbarcoming from "../Rightgrid/Navbarcoming";
 import DiscoverNav from "../../Pages/Discovery/DiscoverNav";
 import { Link } from "react-router-dom";
+import Genre from "./Genre";
 
 const Moviedtails = ({
   watchList,
@@ -15,6 +15,8 @@ const Moviedtails = ({
   setBurgerState,
   discoverState,
   setDiscoverState,
+  genres,
+  setGenres,
 }) => {
   const id = useParams().id;
 
@@ -119,9 +121,7 @@ const Moviedtails = ({
                 <p>
                   <span>Language:</span> {movie.original_language}{" "}
                 </p>
-                <p>
-                  <span> Popularity:</span> {movie?.popularity}{" "}
-                </p>
+
                 <p>
                   <span> Release Date:</span> {movie?.release_date}{" "}
                 </p>
@@ -134,6 +134,19 @@ const Moviedtails = ({
                 <p>
                   <span> Tagline:</span> {movie?.tagline}{" "}
                 </p>
+                <div className="genreRate">
+                  {genres.map((genre, index) => {
+                    return (
+                      <div className="genre" key={index}>
+                        <Genre
+                          genre={genre}
+                          setGenres={setGenres}
+                          movie={movie}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
                 {seeMoreText ? (
                   <p>Overview: {movie?.overview} </p>
                 ) : (
