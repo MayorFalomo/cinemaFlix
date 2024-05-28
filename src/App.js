@@ -21,7 +21,7 @@ function App() {
   const [upComing, setUpcoming] = useState([]);
   const [popular, setPopular] = useState([]);
   const [discover, setDiscover] = useState([]);
-  const [selectedTrend, setSelectedTrend] = useState({});
+  const [selectedTrend, setSelectedTrend] = useState();
   const [playMovieTrailer, setPlayMovieTrailer] = useState(false);
   const [loading, setLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
@@ -77,7 +77,7 @@ function App() {
       },
     });
     setMovies(results);
-    // console.log(results, "results");
+    console.log(results[0], "results");
     await playMovie(results[0]);
   };
 
@@ -85,26 +85,34 @@ function App() {
   const playTrending = async (id) => {
     const { data } = await axios.get(`${TopRatedURL}/movie/${id}`, {
       params: {
-        api_key: "543922b15105a918ffe9965a0d904660&",
+        api_key: "543922b15105a918ffe9965a0d904660",
         append_to_response: "videos",
       },
     });
+    // console.log(data, "This is data ");
     return data;
   };
 
-  // const playTrendingMovieTrailer = async (id) => {
-  //   await axios
-  //     .get(
-  //       `https://api.themoviedb.org/3/movie/157336?api_key=543922b15105a918ffe9965a0d904660&append_to_response=videos`
-  //     )
-  //     .then((res) => {
-  //       // setMovies(res.data);
-  //       console.log(res.data, "new result");
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+  //Function that gets the id, then takes that id and searches then it responds with the movie video trailer
+  const playTrendingMovieTrailer = async (id) => {
+    try {
+      const options = {
+        method: "GET",
+        headers: { accept: "application/json" },
+      };
+      await fetch(
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}&append_to_response=videos`,
+        options
+      )
+        .then((res) => res.json())
+        .then((res) => {
+          setSelectedTrend(res);
+        })
+        .catch((err) => console.log(err));
+    } catch (err) {
+      console.log(err, "error");
+    }
+  };
 
   // useEffect(() => {
   //   playTrendingMovieTrailer();
@@ -228,6 +236,7 @@ function App() {
                     setHamburgerMenu={setHamburgerMenu}
                     genres={genres}
                     setGenres={setGenres}
+                    playTrendingMovieTrailer={playTrendingMovieTrailer}
                   />
                 }
               />

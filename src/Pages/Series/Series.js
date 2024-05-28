@@ -15,13 +15,14 @@ const Series = ({ watchList, setWatchList, genres }) => {
   const [loading, setLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setCompleted(true);
-    }, 1000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setCompleted(true);
+  //   }, 1000);
+  // }, []);
 
   const API_URL = "https://api.themoviedb.org/3";
+
   // Api call for querying for Series
   const fetchSeries = async (searchInput) => {
     const type = searchInput ? "search/tv" : "tv/popular";
@@ -33,7 +34,7 @@ const Series = ({ watchList, setWatchList, genres }) => {
         query: searchInput,
       },
     });
-
+    setCompleted(true);
     await playSeries(results[0]); //For showing the first poster
     setPopularSeries(results);
   };
@@ -63,14 +64,8 @@ const Series = ({ watchList, setWatchList, genres }) => {
   return (
     <div className="SeriesContainer">
       {!completed ? (
-        <div className="contain">
-          {!loading ? (
-            <div className="loader">
-              <ReactLoading type="spin" color="#fff" height={100} width={100} />
-            </div>
-          ) : (
-            <h1>Loading</h1>
-          )}
+        <div className="loaderCon">
+          <span class="loader"></span>
         </div>
       ) : (
         <>

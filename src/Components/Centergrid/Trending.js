@@ -1,49 +1,46 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AiOutlinePlusSquare } from "react-icons/ai";
 import { BsCheck2All } from "react-icons/bs";
 import YouTube from "react-youtube";
-import Watchlist from "../../Pages/Watchlist/Watchlist";
+// import Watchlist from "../../Pages/Watchlist/Watchlist";
 import Trendgenre from "./Trendgenre";
 import "./Trending.css";
+import axios from "axios";
 
 const Trending = ({
   movie,
   selectedTrend,
+  setSelectedTrend,
   playMovieTrailer,
   setPlayMovieTrailer,
   playMovie,
   watchList,
   setWatchList,
   genres,
+  playTrendingMovieTrailer,
 }) => {
   const imagePath = "https://image.tmdb.org/t/p/w500";
   const imgPath = "https://image.tmdb.org/t/p/w1280";
 
   const [seeMore, setSeeMore] = useState(false);
   const [displayButton, setDisplayButton] = useState(false);
-
+  const [trailerKey, setTrailerKey] = useState();
   const addToCart = (param) => {
     setWatchList([...watchList, param]);
   };
 
+  let trail;
   // console.log(selectedTrend, "select");
 
-  const playTrailer = () => {
-    const trailer = selectedTrend.videos.results.find(
-      (vid) => vid.name === "Official Trailer"
-    );
-    return (
-      <YouTube
-        videoId={trailer.key}
-        className="youtube-movie"
-        opts={{
-          width: "100%",
-          height: "100%",
-        }}
-      />
-    );
-  };
+  useEffect(() => {
+    if (selectedTrend.videos) {
+      const trailer = selectedTrend.videos.results.find(
+        (vid) => vid.name === "Official Trailer"
+      );
+      setTrailerKey(trailer?.key);
+    }
+  }, [selectedTrend]);
 
   return (
     <div className="ratedContainer">
@@ -80,15 +77,26 @@ const Trending = ({
             <p className="SeeMore" onClick={() => setSeeMore(!seeMore)}>
               {seeMore ? "See Less" : "See More"}{" "}
             </p>
+
             <div className="CartBtn">
-              {selectedTrend?.videos && playMovieTrailer && playMovie(movie)
-                ? playTrailer()
-                : " "}
+              {trailerKey && setPlayMovieTrailer ? (
+                <YouTube
+                  videoId={trailerKey}
+                  className="youtube-movie"
+                  opts={{
+                    width: "100%",
+                    height: "100%",
+                  }}
+                />
+              ) : (
+                ""
+              )}
               {playMovieTrailer ? (
                 <button
                   className="TrailerBtn"
                   onClick={() => {
                     setPlayMovieTrailer(false);
+                    setTrailerKey("");
                   }}
                 >
                   Close Trailer{" "}
@@ -96,7 +104,11 @@ const Trending = ({
               ) : (
                 <button
                   className="TrailerBtn"
-                  onClick={() => setPlayMovieTrailer(true)}
+                  onClick={() => {
+                    // console.log(movie.id);
+                    playTrendingMovieTrailer(movie.id);
+                    setPlayMovieTrailer(true);
+                  }}
                 >
                   Play Trailer{" "}
                 </button>

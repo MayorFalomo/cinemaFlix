@@ -4,7 +4,6 @@ import Discovermovies from "./Discovermovies";
 import DiscoverNav from "./DiscoverNav";
 import { FaTimes } from "react-icons/fa";
 import { BiMenuAltRight } from "react-icons/bi";
-import ReactLoading from "react-loading";
 import { Link } from "react-router-dom";
 
 const Discovery = ({
@@ -31,13 +30,7 @@ const Discovery = ({
     <div className="discoverContainer">
       {!completed ? (
         <div className="contain">
-          {!loading ? (
-            <div className="loader">
-              <ReactLoading type="spin" color="#fff" height={100} width={100} />
-            </div>
-          ) : (
-            <h1>Loading </h1>
-          )}
+          <span className="loader"></span>
         </div>
       ) : (
         <>

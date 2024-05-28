@@ -9,6 +9,7 @@ const Homepage = ({
   movies,
   setMovies,
   selectedTrend,
+  setSelectedTrend,
   playMovieTrailer,
   setPlayMovieTrailer,
   searchInput,
@@ -33,6 +34,7 @@ const Homepage = ({
   setHamburgerMenu,
   playMovie,
   genres,
+  playTrendingMovieTrailer,
 }) => {
   return (
     <div className="homeContainer">
@@ -66,6 +68,7 @@ const Homepage = ({
         <Centergrid
           movies={movies}
           selectedTrend={selectedTrend}
+          setSelectedTrend={setSelectedTrend}
           topRated={topRated}
           setMovies={setMovies}
           popular={popular}
@@ -85,6 +88,7 @@ const Homepage = ({
           hamburgerMenu={hamburgerMenu}
           setHamburgerMenu={setHamburgerMenu}
           genres={genres}
+          playTrendingMovieTrailer={playTrendingMovieTrailer}
         />
       )}
       <Rightgrid

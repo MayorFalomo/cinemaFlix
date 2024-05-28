@@ -4,7 +4,6 @@ const Coming = ({ coming }) => {
   const imgPath = "https://image.tmdb.org/t/p/w500";
 
   const [seeMoreText, setSeeMoreText] = useState(false);
-
   return (
     <div className="comingCard">
       <div className="comingFlex">
@@ -12,6 +11,7 @@ const Coming = ({ coming }) => {
           <img src={`${imgPath}${coming?.backdrop_path}`} alt="img" />
         </div>
         <p>Release Date: {coming?.release_date} </p>
+        <h3>{coming.original_title} </h3>
         <div className="aboutMovie">
           {seeMoreText ? (
             <p>{coming?.overview} </p>

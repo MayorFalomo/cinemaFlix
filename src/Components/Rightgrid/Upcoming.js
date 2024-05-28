@@ -4,7 +4,7 @@ import { FaTimes } from "react-icons/fa";
 import Navbarcoming from "./Navbarcoming";
 import Newmovies from "./Newmovies";
 import ReactLoading from "react-loading";
-
+import "./Newmovies.css";
 const Upcoming = ({
   upComing,
   setUpComing,
@@ -24,7 +24,7 @@ const Upcoming = ({
   useEffect(() => {
     setTimeout(() => {
       setCompleted(true);
-    }, 2000);
+    }, 1000);
   }, []);
 
   return (
@@ -32,8 +32,17 @@ const Upcoming = ({
       {!completed ? (
         <div className="contain">
           {!loading ? (
-            <div className="loader">
-              <ReactLoading type="spin" color="#fff" height={100} width={100} />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100vh",
+                width: "100vw",
+              }}
+            >
+              <span class="loader"></span>
             </div>
           ) : (
             <h1>Loading</h1>

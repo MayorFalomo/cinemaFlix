@@ -22,6 +22,7 @@ const Centergrid = ({
   setToggleState,
   fetchMovies,
   selectedTrend,
+  setSelectedTrend,
   playMovieTrailer,
   setPlayMovieTrailer,
   watchList,
@@ -33,6 +34,7 @@ const Centergrid = ({
   setHamburgerMenu,
   genres,
   setGenres,
+  playTrendingMovieTrailer,
 }) => {
   const responsive = {
     desktop: {
@@ -146,12 +148,14 @@ const Centergrid = ({
                 key={movie.id}
                 movie={movie}
                 selectedTrend={selectedTrend}
+                setSelectedTrend={setSelectedTrend}
                 playMovieTrailer={playMovieTrailer}
                 setPlayMovieTrailer={setPlayMovieTrailer}
                 playMovie={playMovie}
                 watchList={watchList}
                 setWatchList={setWatchList}
                 genres={genres}
+                playTrendingMovieTrailer={playTrendingMovieTrailer}
               />
             );
           })}
