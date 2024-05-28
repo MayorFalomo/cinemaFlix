@@ -30,9 +30,6 @@ const Trending = ({
     setWatchList([...watchList, param]);
   };
 
-  let trail;
-  // console.log(selectedTrend, "select");
-
   useEffect(() => {
     if (selectedTrend.videos) {
       const trailer = selectedTrend.videos.results.find(

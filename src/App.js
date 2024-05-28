@@ -28,18 +28,17 @@ function App() {
   const [genres, setGenres] = useState([]);
   const SearchURL = "https://api.themoviedb.org/3";
 
-  const TopRatedURL =
-    "https://api.themoviedb.org/3/movie/top_rated?api_key=543922b15105a918ffe9965a0d904660&language=en-US&page=1";
+  const TopRatedURL = `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
 
   const trendingUrl = `https://api.themoviedb.org/3/trending/all/day`;
 
-  const upComingUrl = `https://api.themoviedb.org/3/movie/upcoming?api_key=543922b15105a918ffe9965a0d904660&language=en-US&page=1`;
+  const upComingUrl = `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
 
-  const popularUrl = `https://api.themoviedb.org/3/movie/popular?api_key=543922b15105a918ffe9965a0d904660&language=en-US&page=1`;
+  const popularUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`;
 
-  const discoverUrl = `https://api.themoviedb.org/3/discover/movie?api_key=543922b15105a918ffe9965a0d904660&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=1&with_watch_monetization_types=flatrate`;
+  const discoverUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=1&with_watch_monetization_types=flatrate`;
 
-  const genre = `https://api.themoviedb.org/3/genre/movie/list?api_key=543922b15105a918ffe9965a0d904660&language=en-US`;
+  const genre = `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
 
   // console.log(searchResults);
   useEffect(() => {
@@ -55,7 +54,7 @@ function App() {
       data: { results },
     } = await axios.get(`${SearchURL}/${type}/movie`, {
       params: {
-        api_key: "543922b15105a918ffe9965a0d904660",
+        api_key: process.env.REACT_APP_API_KEY,
         query: searchInput,
       },
     });
@@ -72,12 +71,12 @@ function App() {
       data: { results },
     } = await axios.get(`${trendingUrl}`, {
       params: {
-        api_key: "543922b15105a918ffe9965a0d904660",
+        api_key: process.env.REACT_APP_API_KEY,
         append_to_response: "videos",
       },
     });
     setMovies(results);
-    console.log(results[0], "results");
+    // console.log(results[0], "results");
     await playMovie(results[0]);
   };
 
@@ -85,7 +84,7 @@ function App() {
   const playTrending = async (id) => {
     const { data } = await axios.get(`${TopRatedURL}/movie/${id}`, {
       params: {
-        api_key: "543922b15105a918ffe9965a0d904660",
+        api_key: process.env.REACT_APP_API_KEY,
         append_to_response: "videos",
       },
     });
@@ -113,10 +112,6 @@ function App() {
       console.log(err, "error");
     }
   };
-
-  // useEffect(() => {
-  //   playTrendingMovieTrailer();
-  // }, []);
 
   //To get the id of the movie for trailer...Not implemented yet though
   const playMovie = async (movie) => {
