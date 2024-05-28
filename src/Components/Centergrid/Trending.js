@@ -6,7 +6,6 @@ import YouTube from "react-youtube";
 // import Watchlist from "../../Pages/Watchlist/Watchlist";
 import Trendgenre from "./Trendgenre";
 import "./Trending.css";
-import axios from "axios";
 
 const Trending = ({
   movie,

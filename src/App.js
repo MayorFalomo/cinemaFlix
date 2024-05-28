@@ -113,7 +113,7 @@ function App() {
     }
   };
 
-  //To get the id of the movie for trailer...Not implemented yet though
+  //Function To get the id of the movie for trailer...Not implemented yet though
   const playMovie = async (movie) => {
     setPlayMovieTrailer(false);
     const Movietrailer = await playTrending(movie.id);
