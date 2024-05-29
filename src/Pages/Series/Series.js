@@ -65,10 +65,10 @@ const Series = ({ watchList, setWatchList, genres }) => {
     <div className="SeriesContainer">
       {!completed ? (
         <div className="loaderCon">
-          <span class="loader"></span>
+          <span className="loader"></span>
         </div>
       ) : (
-        <>
+        <div>
           <Navbar
             watchList={watchList}
             burgerActive={burgerActive}
@@ -94,7 +94,7 @@ const Series = ({ watchList, setWatchList, genres }) => {
             setReadMore={setReadMore}
             genres={genres}
           />
-        </>
+        </div>
       )}
     </div>
   );

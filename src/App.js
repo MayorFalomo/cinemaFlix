@@ -41,11 +41,11 @@ function App() {
   const genre = `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`;
 
   // console.log(searchResults);
-  useEffect(() => {
-    setTimeout(() => {
-      setCompleted(true);
-    }, 3000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setCompleted(true);
+  //   }, 3000);
+  // }, []);
 
   //Api call for searching for movies
   const fetchMovies = async (searchInput) => {
@@ -76,20 +76,11 @@ function App() {
       },
     });
     setMovies(results);
+    setCompleted(true);
+    console.log(results[0], "results");
+    // await  playTrendingMovieTrailer(results[0])
     // console.log(results[0], "results");
     await playMovie(results[0]);
-  };
-
-  // Api call for Trending movies and query to watch Trailer
-  const playTrending = async (id) => {
-    const { data } = await axios.get(`${TopRatedURL}/movie/${id}`, {
-      params: {
-        api_key: process.env.REACT_APP_API_KEY,
-        append_to_response: "videos",
-      },
-    });
-    // console.log(data, "This is data ");
-    return data;
   };
 
   //Function that gets the id, then takes that id and searches then it responds with the movie video trailer
@@ -105,6 +96,7 @@ function App() {
       )
         .then((res) => res.json())
         .then((res) => {
+          console.log(res, "result");
           setSelectedTrend(res);
         })
         .catch((err) => console.log(err));
@@ -113,11 +105,31 @@ function App() {
     }
   };
 
+  console.log(movies[0], "movies square");
+
+  useEffect(() => {
+    if (playMovieTrailer) {
+      playTrendingMovieTrailer(movies[0].id);
+    }
+  }, []);
   //Function To get the id of the movie for trailer...Not implemented yet though
   const playMovie = async (movie) => {
     setPlayMovieTrailer(false);
     const Movietrailer = await playTrending(movie.id);
-    setSelectedTrend(Movietrailer);
+    console.log(Movietrailer, "movie Trailer");
+    // setSelectedTrend(Movietrailer);
+  };
+
+  // Api call for Trending movies and query to watch Trailer
+  const playTrending = async (id) => {
+    const { data } = await axios.get(`${TopRatedURL}/movie/${id}`, {
+      params: {
+        api_key: process.env.REACT_APP_API_KEY,
+        append_to_response: "videos",
+      },
+    });
+    // console.log(data, "This is data ");
+    return data;
   };
 
   useEffect(() => {

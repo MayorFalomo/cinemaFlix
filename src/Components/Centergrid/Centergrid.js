@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Trending from "./Trending";
 import "./Centergrid.css";
 import "swiper/css";
@@ -60,6 +60,29 @@ const Centergrid = ({
     setToggleState(!toggleState);
   };
 
+  const [currentSlider, setCurrentSlider] = useState(0);
+
+  // const handleSlideChange = (newSlide) => {
+  //   setCurrentSlide(newSlide);
+  // };
+
+  const carouselRef = useRef(null);
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
+  const handleAfterChange = (currentSlide) => {
+    setCurrentSlideIndex(currentSlide);
+  };
+
+  // useEffect(() => {
+  //   if (carouselRef.current) {
+  //     setCurrentSlideIndex(carouselRef.current.state.currentSlide);
+  //   }
+  // }, []);
+
+  // console.log(movies);
+  // console.log(currentSlideIndex, "currentslide");
+
+  // console.log(movies[currentSlideIndex]);
   return (
     <div className="centerContainer">
       <div className="centerGridCard">
@@ -130,9 +153,13 @@ const Centergrid = ({
         </div>
         <h1>Trending Movie 🔥 </h1>
         <Carousel
+          // slidesToSlide={handleSlideChange}
           // partialVisible={true}
-          swipeable={false}
-          draggable={false}
+          ref={carouselRef}
+          afterChange={handleAfterChange}
+          // {...props}
+          swipeable={true}
+          draggable={true}
           showDots={false}
           responsive={responsive}
           ssr={true} // means to render carousel on server-side.
@@ -141,7 +168,7 @@ const Centergrid = ({
           customTransition="all 0.4s ease"
           transitionDuration={2000}
           containerClass="carousel-container"
-          // removeArrowOnDeviceType={["tablet", "mobile"]}
+          removeArrowOnDeviceType={["tablet", "mobile"]}
           // deviceType={this.props.deviceType}
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-40-px"

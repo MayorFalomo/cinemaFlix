@@ -25,18 +25,22 @@ const Trending = ({
   const [seeMore, setSeeMore] = useState(false);
   const [displayButton, setDisplayButton] = useState(false);
   const [trailerKey, setTrailerKey] = useState();
+
   const addToCart = (param) => {
-    setWatchList([...watchList, param]);
+    setWatchList([param, ...watchList]);
   };
 
+  //SelectedTrend state is an array that stores the videos array for trailer
   useEffect(() => {
-    if (selectedTrend.videos) {
-      const trailer = selectedTrend.videos.results.find(
+    if (selectedTrend?.videos) {
+      const trailer = selectedTrend?.videos?.results.find(
         (vid) => vid.name === "Official Trailer"
       );
       setTrailerKey(trailer?.key);
     }
   }, [selectedTrend]);
+
+  // console.log(movie.id, "movieid");
 
   return (
     <div className="ratedContainer">
@@ -87,6 +91,7 @@ const Trending = ({
               ) : (
                 ""
               )}
+
               {playMovieTrailer ? (
                 <button
                   className="TrailerBtn"
@@ -101,7 +106,7 @@ const Trending = ({
                 <button
                   className="TrailerBtn"
                   onClick={() => {
-                    // console.log(movie.id);
+                    console.log(movie.id);
                     playTrendingMovieTrailer(movie.id);
                     setPlayMovieTrailer(true);
                   }}

@@ -16,15 +16,7 @@ const Navbar = ({ watchList, hamburgerMenu }) => {
   return (
     <nav>
       <div className={hamburgerMenu ? "navbar active" : "navbarHeader"}>
-        <div
-          className={
-            hamburgerMenu
-              ? "clinks active"
-              : "clinks" || hamburgerMenu
-              ? "itemClass.active"
-              : "itemClass"
-          }
-        >
+        <div className={hamburgerMenu ? "clinks active" : "clinks"}>
           <div className="NavLogoImg">
             <img src={logo} alt="img" />
           </div>
@@ -65,11 +57,11 @@ const Navbar = ({ watchList, hamburgerMenu }) => {
               <img src={userImg} alt="img" />
             </div>
             <div className="user">
-              <h3>Falomo Mayowa </h3>
-              <p>Mayorfalomo@gmail.com </p>
+              <h3 style={{ texAlign: "center" }}>Falomo Mayowa </h3>
+              <p style={{ texAlign: "center" }}>Mayorfalomo@gmail.com </p>
             </div>
           </div>
-          <h4 style={{ marginTop: "5px" }}>Log Out </h4>
+          <h4 style={{ marginTop: "5px", texAlign: "center" }}>Log Out </h4>
         </div>
       </div>
     </nav>

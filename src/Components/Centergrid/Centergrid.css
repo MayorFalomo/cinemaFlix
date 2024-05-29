@@ -155,6 +155,8 @@
         right: 20px;
         top: 10px;
         color: #fff;
+                /* border: 2px red solid; */
+
     }
 
     .hamMenu.active{
@@ -165,7 +167,7 @@
         display: flex;
         position: fixed;
         z-index: 99999999999999999999999999999999999999 !important;
-        right: 70%;
+        right: 42%;
         top: 10px;
         color: #fff;
     }
@@ -177,5 +179,11 @@
     .centerContainer{
         width:100%;
         position: relative;
+    }
+}
+
+@media (max-width: 550px) {
+     .TimesHamburgerMenu{
+        right: 72%;
     }
 }
