@@ -43,7 +43,7 @@ const Popular = ({ popular, topRated, watchList, setWatchList }) => {
         ssr={true} // means to render carousel on server-side.
         infinite={true}
         keyBoardControl={true}
-        customTransition="all 1 ease"
+        customTransition="all 0.4s ease"
         transitionDuration={2000}
         containerClass="carousel-container"
         // removeArrowOnDeviceType={["tablet", "mobile"]}

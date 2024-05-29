@@ -28,18 +28,15 @@ const Moviedtails = ({
   const [loading, setLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setCompleted(true);
-    }, 2000);
-  }, []);
-
   const getDetails = async () => {
     axios
       .get(
         `https://api.themoviedb.org/3/movie/${id}?api_key=543922b15105a918ffe9965a0d904660&append_to_response=videos,images`
       )
-      .then((res) => setMovie(res.data))
+      .then((res) => {
+        setMovie(res.data);
+        setLoading(true);
+      })
       .catch((err) => console.log(err));
   };
 
@@ -48,19 +45,13 @@ const Moviedtails = ({
   }, []);
 
   return (
-    <div className="detailsContainer">
-      {!completed ? (
+    <div>
+      {!loading ? (
         <div className="contain">
-          {!loading ? (
-            <div className="loader">
-              <ReactLoading type="spin" color="#fff" width={100} height={100} />{" "}
-            </div>
-          ) : (
-            <h1>Loading</h1>
-          )}{" "}
+          <span className="loader"></span>
         </div>
       ) : (
-        <>
+        <div className="detailsContainer">
           <DiscoverNav
             watchList={watchList}
             burgerState={burgerState}
@@ -135,6 +126,10 @@ const Moviedtails = ({
                   <span> Tagline:</span> {movie?.tagline}{" "}
                 </p>
                 <div className="genreRate">
+                  <p>
+                    {" "}
+                    <span>Genre: </span>{" "}
+                  </p>
                   {genres.map((genre, index) => {
                     return (
                       <div className="genre" key={index}>
@@ -159,7 +154,7 @@ const Moviedtails = ({
               </div>
             </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

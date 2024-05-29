@@ -26,9 +26,13 @@ nav::-webkit-scrollbar {
 .length{
  background-color: red;
  color: #fff;
-    border-radius: 90px;
-    padding: 3px 7px;
-    font-size: 17px;
+ font-size: 14px;
+ border-radius: 50%;
+            place-content: center;
+            min-width: 20px;
+            min-height: 20px;
+            display: grid;
+
 }
 
 .NavLogoImg img{
@@ -109,13 +113,13 @@ nav h4{
 
     .clinks{
         position: absolute; 
-        right: -600vw;
+        right: -200vw;
         top: 0;
          width: 100%; 
-         height: 100%; 
-        overflow: hidden;
+         height: 100vh; 
+        /* overflow: hidden; */
         z-index: 9;
-        transition: 0.5s ease;
+        transition: 0.4s ease;
         display: flex;
         flex-direction: column;
         align-items:flex-start;
@@ -137,10 +141,11 @@ nav h4{
         flex-direction: column;
         align-items:start;
         justify-content: start;
-        overflow: auto;
+        /* overflow: auto; */
     }
     nav{
-        border-right: 3px transparent solid;
+        /* border: 3px red solid; */
+        border-right: 3px transparent solid !important;
     }
 
      

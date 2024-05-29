@@ -69,7 +69,7 @@ const Navbar = ({ watchList, hamburgerMenu }) => {
               <p>Mayorfalomo@gmail.com </p>
             </div>
           </div>
-          <h4>Log Out </h4>
+          <h4 style={{ marginTop: "5px" }}>Log Out </h4>
         </div>
       </div>
     </nav>

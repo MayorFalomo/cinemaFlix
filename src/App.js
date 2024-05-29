@@ -194,7 +194,7 @@ function App() {
           )}
         </div>
       ) : (
-        <>
+        <div>
           <Routes>
             <Route>
               <Route
@@ -326,7 +326,7 @@ function App() {
               {" "}
             </Route>
           </Routes>
-        </>
+        </div>
       )}
     </div>
   );

@@ -88,39 +88,43 @@ const Centergrid = ({
             </Link>
           </ul>
           {menuActive ? (
-            <div
+            <p
               onClick={() => setMenuActive(!menuActive)}
               className={menuActive ? "burgerX" : "burgerActiveX"}
+              style={{ cursor: "pointer" }}
             >
-              <p>{<FaTimes className="burgerMenu" />} </p>{" "}
-            </div>
+              {<FaTimes className="burgerMenu" cursor="pointer" />}{" "}
+            </p>
           ) : (
-            <div
+            <p
               onClick={() => setMenuActive(!menuActive)}
               className={menuActive ? "burgerActive" : "burger"}
+              style={{ cursor: "pointer" }}
             >
-              <p>{<BiMenuAltRight className="burgerMenuBar" />} </p>
-            </div>
+              {<BiMenuAltRight className="burgerMenuBar" />}{" "}
+            </p>
           )}
 
           <div className="burgerContainer">
             {" "}
             {hamburgerMenu ? (
-              <div
+              <p
                 onClick={() => setHamburgerMenu(!hamburgerMenu)}
                 className={
                   hamburgerMenu ? "TimesHamburgerMenu" : "hamburgerMenuActive"
                 }
+                style={{ cursor: "pointer" }}
               >
-                <p>{<FaTimes className="burgerMenu" />} </p>{" "}
-              </div>
+                {<FaTimes className="burgerMenu" />}{" "}
+              </p>
             ) : (
-              <div
+              <p
                 onClick={() => setHamburgerMenu(!hamburgerMenu)}
                 className={hamburgerMenu ? "hamMenu active" : "hamburgerLinks"}
+                style={{ cursor: "pointer" }}
               >
-                <p>{<BiMenuAltRight className="burgerMenu" />} </p>
-              </div>
+                {<BiMenuAltRight className="burgerMenu" />}{" "}
+              </p>
             )}
           </div>
         </div>
@@ -134,7 +138,7 @@ const Centergrid = ({
           ssr={true} // means to render carousel on server-side.
           infinite={true}
           keyBoardControl={true}
-          customTransition="all 1 ease"
+          customTransition="all 0.4s ease"
           transitionDuration={2000}
           containerClass="carousel-container"
           // removeArrowOnDeviceType={["tablet", "mobile"]}
