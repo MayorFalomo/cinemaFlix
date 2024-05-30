@@ -7,13 +7,19 @@ h1 span{
 }
 
 nav{
+    /* border: 2px red solid; */
         width: 100%;
         border-right: 3px turquoise solid;
         border-bottom: 2px turquoise solid;
         border-top-right-radius: 40px;
         border-bottom-right-radius: 40px;
-        overflow: hidden;
+        overflow: hidden !important;
+        height: 100vh !important;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+nav::-webkit-scrollbar {
+  width: 0;
 }
 
 .NavLogoImg img{

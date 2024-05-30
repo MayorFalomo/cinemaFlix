@@ -49,7 +49,7 @@ const Upcoming = ({
           )}
         </div>
       ) : (
-        <>
+        <div>
           <Navbarcoming
             watchList={watchList}
             upComing={upComing}
@@ -99,7 +99,7 @@ const Upcoming = ({
               })}
             </div>
           </div>
-        </>
+        </div>
       )}
     </div>
   );

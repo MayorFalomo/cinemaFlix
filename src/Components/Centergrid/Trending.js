@@ -40,6 +40,10 @@ const Trending = ({
     }
   }, [selectedTrend]);
 
+  console.log(
+    watchList.some((added) => (added.id === movie.id ? "Hello" : "absent"))
+  );
+
   // console.log(movie.id, "movieid");
 
   return (
@@ -114,27 +118,23 @@ const Trending = ({
                   Play Trailer{" "}
                 </button>
               )}
-              {displayButton ? (
-                <div className="watchlistButtons">
-                  <button
-                    className="addedRated"
-                    onClick={() => setDisplayButton(displayButton)}
-                  >
-                    Added {<BsCheck2All className="check" />}
-                  </button>{" "}
-                </div>
+              {watchList.some((added) => added.id === movie.id) ? (
+                <button
+                  className="addedRated"
+                  onClick={() => setDisplayButton(displayButton)}
+                >
+                  Added {<BsCheck2All className="check" />}
+                </button>
               ) : (
-                <div className="addedBtns">
-                  <button
-                    className="watchBtns"
-                    onClick={() => {
-                      addToCart(movie);
-                      setDisplayButton(!displayButton);
-                    }}
-                  >
-                    Add to Watchlist {<AiOutlinePlusSquare className="plus" />}
-                  </button>
-                </div>
+                <button
+                  className="watchBtns"
+                  onClick={() => {
+                    addToCart(movie);
+                    setDisplayButton(!displayButton);
+                  }}
+                >
+                  Add to Watchlist {<AiOutlinePlusSquare className="plus" />}
+                </button>
               )}
             </div>
           </div>

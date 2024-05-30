@@ -3,7 +3,6 @@ import Navbar from "../../Components/Navbar/Navbar";
 import axios from "axios";
 import "./Series.css";
 import Tvshow from "./Tvshow";
-import ReactLoading from "react-loading";
 
 const Series = ({ watchList, setWatchList, genres }) => {
   const [searchInput, setSearchInput] = useState(" ");
@@ -12,14 +11,7 @@ const Series = ({ watchList, setWatchList, genres }) => {
   const [playSeriesTrailer, setPlaySeriesTrailer] = useState(false);
   const [burgerActive, setBurgerActive] = useState(false);
   const [readMore, setReadMore] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [completed, setCompleted] = useState(false);
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setCompleted(true);
-  //   }, 1000);
-  // }, []);
 
   const API_URL = "https://api.themoviedb.org/3";
 
@@ -30,7 +22,7 @@ const Series = ({ watchList, setWatchList, genres }) => {
       data: { results },
     } = await axios.get(`${API_URL}/${type}`, {
       params: {
-        api_key: "543922b15105a918ffe9965a0d904660",
+        api_key: process.env.REACT_APP_API_KEY,
         query: searchInput,
       },
     });
@@ -43,7 +35,7 @@ const Series = ({ watchList, setWatchList, genres }) => {
   const fetchShow = async (id) => {
     const { data } = await axios.get(`${API_URL}/tv/${id}`, {
       params: {
-        api_key: "543922b15105a918ffe9965a0d904660",
+        api_key: process.env.REACT_APP_API_KEY,
         append_to_response: "videos",
       },
     });
@@ -62,13 +54,13 @@ const Series = ({ watchList, setWatchList, genres }) => {
   }, []);
 
   return (
-    <div className="SeriesContainer">
+    <div>
       {!completed ? (
         <div className="loaderCon">
           <span className="loader"></span>
         </div>
       ) : (
-        <div>
+        <div className="SeriesContainer">
           <Navbar
             watchList={watchList}
             burgerActive={burgerActive}

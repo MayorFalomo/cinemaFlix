@@ -1,7 +1,12 @@
 .watchContainer{
     display: grid;
     grid-template-columns: 300px auto;
-    overflow: auto;
+    height: 100%;
+    overflow: hidden;
+}
+
+.watchContainer::-webkit-scrollbar {
+  width: 0;
 }
 
 .seenImg img{
@@ -33,13 +38,20 @@
     gap: 20px;
 }
 
+.flexHeading {
+    overflow: auto;
+}
+.flexHeading::-webkit-scrollbar {
+  width: 0;
+}
 
 .flexWatch{
-    display: inline-flex;
-    align-items: start;
+    display: flex;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 20px;
-    height: 100vh;
+    max-height: 100vh;
+    /* height: 100vh; */
     text-align: center;
 }
 .flexHeading h1{

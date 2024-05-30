@@ -191,6 +191,7 @@ function App() {
   const [burgerState, setBurgerState] = useState(false);
   const [discoverState, setDiscoverState] = useState(false);
 
+  // console.log(watchList, "watchList");
   return (
     <div className="App">
       {!completed ? (

@@ -4,6 +4,7 @@ import { FaTimes } from "react-icons/fa";
 import Navbarcoming from "../../Components/Rightgrid/Navbarcoming";
 import DiscoverNav from "../Discovery/DiscoverNav";
 import Seenmovies from "./Seenmovies";
+import "./Seenmovie.css";
 
 const Watchlist = ({
   watchList,

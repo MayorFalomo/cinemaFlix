@@ -63,6 +63,8 @@ const Tvshow = ({
     },
   };
 
+  console.log(popularSeries, "popular series");
+
   // For the Youtube player
   const playTrailer = () => {
     const trailer = selectedSeries.videos.results.find(
@@ -142,10 +144,13 @@ const Tvshow = ({
         <div className="cardText">
           <h1>{selectedSeries?.name} </h1>
           <h1>{selectedSeries?.original_title} </h1>
-          <div className="extraInfo">
+          <div
+            style={{ color: "rgba(255, 255, 255, 0.574)" }}
+            className="extraInfo"
+          >
             Date: {selectedSeries?.first_air_date} |{" "}
             {selectedSeries?.episode_run_time}
-            minutes | Seasons: {selectedSeries?.number_of_seasons} |{" "}
+            minutes | Seasons: {selectedSeries?.number_of_seasons}{" "}
             <span>
               {genres.map((genre, index) => {
                 return (
@@ -155,13 +160,13 @@ const Tvshow = ({
                 );
               })}
             </span>
-            <span>
+            <div>
               {popularSeries.map((pop, index) => (
                 <span key={index}>
                   <Genres pop={pop} />{" "}
                 </span>
               ))}
-            </span>
+            </div>
           </div>
           {readMore ? (
             <p className="overView"> {selectedSeries?.overview}</p>
@@ -196,8 +201,8 @@ const Tvshow = ({
       </div>
       <div className="ItemClass">
         <Carousel
-          swipeable={false}
-          draggable={false}
+          swipeable={true}
+          draggable={true}
           showDots={false}
           responsive={responsive}
           ssr={true} // means to render carousel on server-side.
