@@ -44,8 +44,8 @@ const Toprated = ({
         <h1>Top Rated⭐ </h1>
       </div>
       <Carousel
-        swipeable={false}
-        draggable={false}
+        swipeable={true}
+        draggable={true}
         showDots={false}
         responsive={responsive}
         ssr={true} // means to render carousel on server-side.
@@ -58,16 +58,20 @@ const Toprated = ({
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
       >
-        {topRated.map((top) => {
-          return (
-            <Rated
-              key={top.id}
-              top={top}
-              watchList={watchList}
-              setWatchList={setWatchList}
-            />
-          );
-        })}
+        {topRated.length >= 1 ? (
+          topRated.map((top) => {
+            return (
+              <Rated
+                key={top.id}
+                top={top}
+                watchList={watchList}
+                setWatchList={setWatchList}
+              />
+            );
+          })
+        ) : (
+          <span class="loader"></span>
+        )}
       </Carousel>
     </div>
   );

@@ -40,10 +40,6 @@ const Trending = ({
     }
   }, [selectedTrend]);
 
-  console.log(
-    watchList.some((added) => (added.id === movie.id ? "Hello" : "absent"))
-  );
-
   // console.log(movie.id, "movieid");
 
   return (
@@ -130,6 +126,7 @@ const Trending = ({
                   className="watchBtns"
                   onClick={() => {
                     addToCart(movie);
+                    // addToCart(movie);
                     setDisplayButton(!displayButton);
                   }}
                 >

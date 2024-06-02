@@ -36,8 +36,8 @@ const Popular = ({ popular, topRated, watchList, setWatchList }) => {
     <div>
       <h1>Popular Movies </h1>
       <Carousel
-        swipeable={false}
-        draggable={false}
+        swipeable={true}
+        draggable={true}
         showDots={false}
         responsive={responsive}
         ssr={true} // means to render carousel on server-side.

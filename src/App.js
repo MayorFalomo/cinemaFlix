@@ -58,6 +58,7 @@ function App() {
         query: searchInput,
       },
     });
+    setCompleted(true);
     setSearchResults(results);
   };
 
@@ -191,21 +192,11 @@ function App() {
   const [burgerState, setBurgerState] = useState(false);
   const [discoverState, setDiscoverState] = useState(false);
 
-  // console.log(watchList, "watchList");
+  console.log(watchList, "watchList");
   return (
     <div className="App">
       {!completed ? (
-        <div className="contain">
-          {!loading ? (
-            <div className="loader">
-              <div className="vector">
-                <Preload />
-              </div>
-            </div>
-          ) : (
-            <h1> CINEMAFLIXLOGO </h1>
-          )}
-        </div>
+        <Preload />
       ) : (
         <div>
           <Routes>
